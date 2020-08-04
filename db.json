@@ -9,6 +9,36 @@
       "title": "Star Wars: A New Hope",
       "rating": "5",
       "id": 2
+    },
+    {
+      "title": "The Bourne Identity",
+      "rating": 5,
+      "id": 3
+    },
+    {
+      "title": "The Lion King",
+      "rating": "4",
+      "id": 4
+    },
+    {
+      "title": "The Lion King 2",
+      "rating": "3",
+      "id": 5
+    },
+    {
+      "title": "Rio",
+      "rating": "2",
+      "id": 6
+    },
+    {
+      "title": "The Lion King 3",
+      "rating": "5",
+      "id": 7
+    },
+    {
+      "title": "Casablanca 2",
+      "rating": "4",
+      "id": 8
     }
   ]
 }

@@ -3,15 +3,71 @@
 <head>
     <meta charset="UTF-8" />
     <title>My Application</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/all.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css" integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">
     <link rel="stylesheet" href="/style.css" />
 </head>
 <body>
 
-    <div class="container">
-        <h1>Hello There!</h1>
-        <p>To get started, edit <code>src/index.js</code>.</p>
-    </div>
+<div id="container" class="container-fluid">
+    <div id="movie-box" class="d-flex flex-wrap justify-content-center">
 
-    <script src="./main.js"></script>
+    </div>
+    <form>
+        <label for="movie-title">Movie Title</label>
+        <input type="text" id="movie-title">
+
+        <select name="movie-rating" id="movie-rating">
+            <option value="1">
+                *
+            </option>
+            <option value="2">**</i></option>
+            <option value="3">***</option>
+            <option value="4">****</option>
+            <option value="5">*****</option>
+        </select>
+
+        <button id="movie-submit">ADD MOVIE</button>
+    </form>
+</div>
+
+<div class="ma-card">
+    <div class="ma-card-front add">
+        <i class="far fa-plus-square"></i>
+    </div>
+</div>
+
+<!--    <div class="card">-->
+<!--        <div class="card-inner">-->
+<!--            <div class="card-front">-->
+<!--                <div class="card-header circle">-->
+<!--                    <h2 class="movie-title">THE LION KING 3: ELECTRIC BOOGALOO</h2>-->
+<!--                    <h3 class="movie-rating">-->
+<!--                        <i class="fas fa-star"></i>-->
+<!--                        <i class="fas fa-star"></i>-->
+<!--                        <i class="fas fa-star"></i>-->
+<!--                        <i class="fas fa-star"></i>-->
+<!--                        <i class="fas fa-star"></i>-->
+<!--                    </h3>-->
+<!--                </div>-->
+<!--                <div class="card-body">-->
+<!--                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus dolorem doloremque earum impedit rem rerum unde vero. Adipisci, delectus dolor dolores impedit ipsa modi molestias odio officiis, omnis ratione vel.</p>-->
+<!--&lt;!&ndash;                    <div class="movie-edit2">&ndash;&gt;-->
+<!--&lt;!&ndash;                        <i class="far fa-edit"></i>&ndash;&gt;-->
+<!--&lt;!&ndash;                    </div>&ndash;&gt;-->
+<!--                </div>-->
+<!--            </div>-->
+<!--            <div class="card-back">-->
+<!--                <form>-->
+<!--                    <input class="title-input" type="text" placeholder="Title">-->
+<!--                    <textarea class="description-input" name="" id="" cols="30" rows="10"></textarea>-->
+<!--                </form>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
+
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
+<script src="./main.js"></script>
 </body>
 </html>

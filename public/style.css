@@ -2,9 +2,192 @@ html, body {
     height: 100%;
 }
 
+/*.center {*/
+/*    display: flex;*/
+/*    justify-content: center;*/
+/*    align-items: center;*/
+/*}*/
+
 .container {
     position: relative;
     top: 50%;
     transform: translateY(-100%);
     text-align: center;
+}
+
+.movie-box {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.title-input {
+    border-radius: 20px;
+}
+
+.add {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(45deg, #16BFFD, #CB3066);
+    font-size: 6em;
+}
+
+
+/* CARD */
+.ma-card {
+    display: inline-block;
+    width: 300px;
+    height: 420px;
+    margin: 20px;
+}
+
+.ma-card-inner {
+    position: relative;
+    width: 300px;
+    height: 420px;
+}
+
+.ma-card-front, .ma-card-back {
+    background-color: #fff;
+    border-radius: 20px;
+    box-shadow: 0 15px 25px rgba(0,0,0,0.2);
+    transition: 0.5s;
+}
+
+.circle {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-color: dodgerblue;
+    clip-path: circle(180px at center 0);
+    border-radius: 20px;
+}
+
+.ma-card-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    color: white;
+}
+
+.ma-card-header #movie-rating {
+    margin-top: 0;
+}
+
+.ma-card-body {
+    position: absolute;
+    bottom: 10px;
+    text-align: center;
+    padding: 1em 1em 2em 1em;
+}
+
+/* CARD FLIP */
+.ma-card {
+    background-color: transparent;
+    perspective: 1000px; /* Remove this if you don't want the 3D effect */
+}
+
+/* This container is needed to position the front and back side */
+.ma-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+}
+
+.flip {
+    transform: rotateY(180deg);
+}
+
+/* Do an horizontal flip when you move the mouse over the flip box container */
+.ma-card:hover .ma-card-inner {
+    transform: rotateY(180deg);
+}
+
+/* Position the front and back side */
+.ma-card-front, .ma-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden; /* Safari */
+    backface-visibility: hidden;
+}
+
+/* Style the front side (fallback if image is missing) */
+.ma-card-front {
+    /*background-color: #bbb;*/
+    color: black;
+}
+
+/* Style the back side */
+.ma-card-back {
+    transform: rotateY(180deg);
+}
+
+
+/* CSS LOADING ANIMATION */
+.sk-cube-grid {
+    width: 40px;
+    height: 40px;
+    margin: 100px auto;
+}
+
+.sk-cube-grid .sk-cube {
+    width: 33%;
+    height: 33%;
+    background-color: #333;
+    float: left;
+    -webkit-animation: sk-cubeGridScaleDelay 1.3s infinite ease-in-out;
+    animation: sk-cubeGridScaleDelay 1.3s infinite ease-in-out;
+}
+.sk-cube-grid .sk-cube1 {
+    -webkit-animation-delay: 0.2s;
+    animation-delay: 0.2s; }
+.sk-cube-grid .sk-cube2 {
+    -webkit-animation-delay: 0.3s;
+    animation-delay: 0.3s; }
+.sk-cube-grid .sk-cube3 {
+    -webkit-animation-delay: 0.4s;
+    animation-delay: 0.4s; }
+.sk-cube-grid .sk-cube4 {
+    -webkit-animation-delay: 0.1s;
+    animation-delay: 0.1s; }
+.sk-cube-grid .sk-cube5 {
+    -webkit-animation-delay: 0.2s;
+    animation-delay: 0.2s; }
+.sk-cube-grid .sk-cube6 {
+    -webkit-animation-delay: 0.3s;
+    animation-delay: 0.3s; }
+.sk-cube-grid .sk-cube7 {
+    -webkit-animation-delay: 0s;
+    animation-delay: 0s; }
+.sk-cube-grid .sk-cube8 {
+    -webkit-animation-delay: 0.1s;
+    animation-delay: 0.1s; }
+.sk-cube-grid .sk-cube9 {
+    -webkit-animation-delay: 0.2s;
+    animation-delay: 0.2s; }
+
+@-webkit-keyframes sk-cubeGridScaleDelay {
+    0%, 70%, 100% {
+        -webkit-transform: scale3D(1, 1, 1);
+        transform: scale3D(1, 1, 1);
+    } 35% {
+          -webkit-transform: scale3D(0, 0, 1);
+          transform: scale3D(0, 0, 1);
+      }
+}
+
+@keyframes sk-cubeGridScaleDelay {
+    0%, 70%, 100% {
+        -webkit-transform: scale3D(1, 1, 1);
+        transform: scale3D(1, 1, 1);
+    } 35% {
+          -webkit-transform: scale3D(0, 0, 1);
+          transform: scale3D(0, 0, 1);
+      }
 }
