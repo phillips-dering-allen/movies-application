@@ -1,5 +1,7 @@
 const getRandomColor = () => {
-    const colors = ['#8a0e40','#f0ad4e','#fcdc6c','#029658','#5bc0de','#343464','#6454ac','#ec4c8c','#008080','#878787'];
+    const colors = ['#8a0e40','#f0ad4e','#fccc3f','#029658','#5bc0de','#343464','#6454ac','#ec4c8c','#008080','#878787'];
+    // e8ce72
+    // fcdc6c
     return colors[Math.floor(Math.random() * colors.length) + 1];
 }
 

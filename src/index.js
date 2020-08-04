@@ -1,43 +1,35 @@
-/**
- * es6 modules and imports
- */
+/* es6 modules and imports */
 import * as key from './keys';
 import * as view from './views';
 
-/**
- * require style imports
- */
+/* require style imports */
 const {getMovies, getMovie, postMovie} = require('./api.js');
 
 const state = {}
 
 const init = () => {
-  console.log("Init");
+  // Render the Loader
   view.renderLoader();
 
-
-  getMovies().then((movies) => {
-    console.log(movies)
+  // Get the Movies from the DB
+  getMovies().then(movies => {
+    // Store the length
     state.length = movies.length;
-    // console.log('Here are all the movies:');
-    // movies.forEach(({title, rating, id}) => {
-    //   console.log(`id#${id} - ${title} - rating: ${rating}`);
-    // });
+
+    // Render the movies
     view.renderMovies(movies);
-  }).catch((error) => {
+  }).catch(error => {
     alert('Oh no! Something went wrong.\nCheck the console for details.')
     console.log(error);
   });
 
-  getMovie(2).then((movie) => console.log(movie));
   //postMovie("The Bourne Identity", 5, state.length);
-  console.log("END");
-
   // fetch(`http://www.omdbapi.com/?apikey=${key.openMovieDB}&t=lion+king`).then(response => response.json()).then(data => console.log(data));
-}
-
+};
 init();
 
+
+/* Event Listeners */
 $('#movie-submit').click((e) => {
   e.preventDefault();
   const movie = {
