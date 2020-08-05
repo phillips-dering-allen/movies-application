@@ -1,77 +1,85 @@
-/* es6 modules and imports */
+/* IMPORTS */
 import * as key from './keys';
 import * as view from './views';
 
+const {getMovies, postMovie, getMovieInfo} = require('./api.js');
 
-/* require style imports */
-const {getMovies, getMovie, getMovieInfo, postMovie} = require('./api.js');
 
-const state = {}
+const state = {
+  flipped: false,
+}
+
+const update = (movie) => {
+  const newCard = view.renderMovie(movie);
+  $('#movie-box').append(newCard);
+}
 
 const init = () => {
-  // Render the Loader
-  view.renderLoader();
-
-  // Get the Movies from the DB
-  getMovies().then(movies => {
-    // Store the length
-    state.length = movies.length;
-
-    // Render the movies
-    view.renderMovies(movies);
-  }).catch(error => {
-    alert('Oh no! Something went wrong.\nCheck the console for details.')
-    console.log(error);
-  });
-
-  //postMovie("The Bourne Identity", 5, state.length);
-  // fetch(`http://www.omdbapi.com/?apikey=${key.openMovieDB}&t=lion+king`).then(response => response.json()).then(data => console.log(data));
+  getMovies()
+      .then(movies => {
+        view.renderMovies(movies);
+      })
+      .catch(error => alert(error));
 };
 init();
 
-
 /* Event Listeners */
-$('#movie-submit').click((e) => {
+$('#movie-box').on("click","#movie-submit",((e) => {
   e.preventDefault();
-  let movie = {
+
+  const movie = {
     title: $('#movie-title').val(),
-    rating: $('#movie-description').val(),
-    description: $('input[name="rating"]').val(),
-    id: state.length + 1,
+    description: $('#movie-description').val(),
+    rating: $('input[name="rating"]').val()
   }
 
-  // getMovieInfo(key.openMovieDB, movie)
-  //     .then(() => {
-  //       postMovie(key.openMovieDB, movie).then();
-  //       view.clearInput();
-  //       init();
-  //     })
-  //     .catch(error => {
-  //       console.log("IT FAILED");
-  //       movie.poster = "https://m.media-amazon.com/images/M/MV5BMTkxNDc3OTcxMV5BMl5BanBnXkFtZTgwODk2NjAzOTE@._V1_SX300.jpg";
-  //     });
+  console.log(movie);
 
-  // console.log(movie.title);
-  // console.log(movie.description);
-  // console.log(movie.rating);
-  // postMovie(key.openMovieDB, movie.title, movie.description, movie.rating, state.length).then();
-  // view.clearInput();
-  // init();
+  fetch(`http://www.omdbapi.com/?apikey=${key.openMovieDB}&t=${movie.title}`)
+      .then(result => result.json())
+      .then(data => {
+        console.log(data);
+        movie.poster = data.Poster
+        if(movie.description.length === 0)
+          movie.description = data.Plot;
+        postMovie(movie)
+            .then((response) => response.json())
+            .then((movie) => update(movie));
+      });
+}));
+
+$('#movie-box').on('click','.card', (e) => {
+  if(!state.flipped) {
+    state.currentlyFlipped = e.currentTarget.children[0];
+    state.currentlyFlipped.classList.toggle('flip');
+    state.flipped = true;
+  } else {
+    if(e.target.classList.value.includes('top-left')) {
+      state.currentlyFlipped.classList.toggle('flip');
+      state.flipped = false;
+    } else {
+      state.currentlyFlipped.classList.toggle('flip');
+      state.currentlyFlipped = e.currentTarget.children[0];
+      state.currentlyFlipped.classList.toggle('flip');
+    }
+  }
 });
 
+$('#movie-box').on('click','.top-right', (e) => {
+  state.edit = true;
+  console.log(e.currentTarget.parentNode.children);
 
-// $('.add').click((e) => {
-//   e.preventDefault();
-//   const addMovie = {
-//
-//   }
-// })
+});
 
+$('#movie-box').on('hover','#card-add', () => {
+  console.log("HOVER");
+});
+
+// Hover Effect
 
 // Stars rating
-$('.rating label i').click((e) => {
-  const attr = e.currentTarget.parentNode.getAttribute('for');
-  console.log($("#" + attr).siblings("input"));
-  //
-  // console.log(e.currentTarget.parentNode)
-});
+// $('.rating label i').click((e) => {
+//     const attr = e.currentTarget.parentNode.getAttribute('for');
+//     // console.log($("#" + attr).siblings("input"));
+//     console.log(attr);
+// });

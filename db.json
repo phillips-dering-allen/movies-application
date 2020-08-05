@@ -2,89 +2,121 @@
   "movies": [
     {
       "title": "Casablanca",
+      "description": "A cynical American expatriate struggles to decide whether or not he should help his former lover and her fugitive husband escape French Morocco.",
       "rating": "4",
-      "id": 1
+      "id": 1,
+      "poster": "https://m.media-amazon.com/images/M/MV5BY2IzZGY2YmEtYzljNS00NTM5LTgwMzUtMzM1NjQ4NGI0OTk0XkEyXkFqcGdeQXVyNDYyMDk5MTU@._V1_SX300.jpg"
     },
     {
       "title": "Star Wars: A New Hope",
+      "description": "Luke Skywalker joins forces with a Jedi Knight, a cocky pilot, a Wookiee and two droids to save the galaxy from the Empire's world-destroying battle station, while also attempting to rescue Princess Leia from the mysterious Darth Vader.",
       "rating": "5",
-      "id": 2
+      "id": 2,
+      "poster": "https://m.media-amazon.com/images/M/MV5BNzVlY2MwMjktM2E4OS00Y2Y3LWE3ZjctYzhkZGM3YzA1ZWM2XkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_SX300.jpg"
     },
     {
-      "title": "The Bourne Identity",
-      "rating": 5,
+      "name": "The Chronicles of Narnia",
+      "description": "LIONS",
+      "rating": "3",
+      "poster": "https://m.media-amazon.com/images/M/MV5BMTkxNDc3OTcxMV5BMl5BanBnXkFtZTgwODk2NjAzOTE@._V1_SX300.jpg",
       "id": 3
     },
     {
+      "title": "Yes",
+      "description": "In this film, told almost entirely in iambic pentameter, She is a scientist in a loveless marriage to Anthony, a devious politician. He is a Lebanese doctor in self-imposed exile, working ...",
+      "rating": "1",
+      "id": 4,
+      "poster": "https://m.media-amazon.com/images/M/MV5BMTMxNzAyMTg4NV5BMl5BanBnXkFtZTcwNjUwMTkyMQ@@._V1_SX300.jpg"
+    },
+    {
       "title": "The Lion King",
-      "rating": "4",
-      "id": 4
+      "description": "Lion prince Simba and his father are targeted by his bitter uncle, who wants to ascend the throne himself.",
+      "rating": "1",
+      "id": 5,
+      "poster": "https://m.media-amazon.com/images/M/MV5BYTYxNGMyZTYtMjE3MS00MzNjLWFjNmYtMDk3N2FmM2JiM2M1XkEyXkFqcGdeQXVyNjY5NDU4NzI@._V1_SX300.jpg"
     },
     {
-      "title": "The Lion King 2",
-      "rating": "3",
-      "id": 5
+      "title": "Batman",
+      "description": "The Dark Knight of Gotham City begins his war on crime with his first major enemy being Jack Napier, a criminal who becomes the clownishly homicidal Joker.",
+      "rating": "1",
+      "id": 6,
+      "poster": "https://m.media-amazon.com/images/M/MV5BMTYwNjAyODIyMF5BMl5BanBnXkFtZTYwNDMwMDk2._V1_SX300.jpg"
     },
     {
-      "title": "Rio",
-      "rating": "2",
-      "id": 6
-    },
-    {
-      "title": "The Lion King 3",
-      "rating": "5",
+      "title": "Toy Story",
+      "description": "A cowboy doll is profoundly threatened and jealous when a new spaceman figure supplants him as top toy in a boy's room.",
+      "rating": "1",
+      "poster": "https://m.media-amazon.com/images/M/MV5BMDU2ZWJlMjktMTRhMy00ZTA5LWEzNDgtYmNmZTEwZTViZWJkXkEyXkFqcGdeQXVyNDQ2OTk4MzI@._V1_SX300.jpg",
       "id": 7
     },
     {
-      "title": "Casablanca 2",
-      "rating": "4",
+      "title": "Toy Story 2",
+      "description": "When Woody is stolen by a toy collector, Buzz and his friends set out on a rescue mission to save Woody before he becomes a museum toy property with his roundup gang Jessie, Prospector, and Bullseye.",
+      "rating": "1",
+      "poster": "https://m.media-amazon.com/images/M/MV5BMWM5ZDcxMTYtNTEyNS00MDRkLWI3YTItNThmMGExMWY4NDIwXkEyXkFqcGdeQXVyNjUwNzk3NDc@._V1_SX300.jpg",
       "id": 8
     },
     {
-      "title": "",
+      "title": "Toy Story 3",
+      "description": "The toys are mistakenly delivered to a day-care center instead of the attic right before Andy leaves for college, and it's up to Woody to convince the other toys that they weren't abandoned and to return home.",
+      "rating": "1",
+      "poster": "https://m.media-amazon.com/images/M/MV5BMTgxOTY4Mjc0MF5BMl5BanBnXkFtZTcwNTA4MDQyMw@@._V1_SX300.jpg",
       "id": 9
     },
     {
-      "title": "Yes",
-      "description": "1",
-      "rating": "SUPER COOL",
+      "title": "Toy Story 4",
+      "description": "When a new toy called \"Forky\" joins Woody and the gang, a road trip alongside old and new friends reveals how big the world can be for a toy.",
+      "rating": "1",
+      "poster": "https://m.media-amazon.com/images/M/MV5BMTYzMDM4NzkxOV5BMl5BanBnXkFtZTgwNzM1Mzg2NzM@._V1_SX300.jpg",
       "id": 10
     },
     {
-      "title": "Yes 2",
-      "description": "1",
-      "rating": "SUPER COOL AWESOME",
+      "title": "Monsters Inc",
+      "description": "In order to power the city, monsters have to scare children so that they scream. However, the children are toxic to the monsters, and after a child gets through, 2 monsters realize things may not be what they think.",
+      "rating": "1",
+      "poster": "https://m.media-amazon.com/images/M/MV5BMTY1NTI0ODUyOF5BMl5BanBnXkFtZTgwNTEyNjQ0MDE@._V1_SX300.jpg",
       "id": 11
     },
     {
-      "title": "Lion King",
-      "description": "1",
-      "rating": "",
+      "title": "Looper",
+      "description": "In 2074, when the mob wants to get rid of someone, the target is sent into the past, where a hired gun awaits - someone like Joe - who one day learns the mob wants to 'close the loop' by sending back Joe's future self for assassination.",
+      "rating": "1",
+      "poster": "https://m.media-amazon.com/images/M/MV5BMTg5NTA3NTg4NF5BMl5BanBnXkFtZTcwNTA0NDYzOA@@._V1_SX300.jpg",
       "id": 12
     },
     {
-      "title": "Yes",
-      "description": "1",
-      "rating": "12",
+      "title": "John Wick",
+      "description": "An ex-hit-man comes out of retirement to track down the gangsters that killed his dog and took everything from him.",
+      "rating": "1",
+      "poster": "https://m.media-amazon.com/images/M/MV5BMTU2NjA1ODgzMF5BMl5BanBnXkFtZTgwMTM2MTI4MjE@._V1_SX300.jpg",
       "id": 13
     },
     {
-      "title": "lion king",
-      "description": "1",
-      "rating": "",
+      "title": "John Wick 2",
+      "rating": "1",
+      "poster": "https://m.media-amazon.com/images/M/MV5BMTkxNDc3OTcxMV5BMl5BanBnXkFtZTgwODk2NjAzOTE@._V1_SX300.jpg",
       "id": 14
     },
     {
-      "title": "Yes 4",
-      "rating": "",
-      "description": "1",
+      "title": "Matrix",
+      "description": "Steven Matrix is one of the underworld's foremost hitmen until his luck runs out, and someone puts a contract out on him. Shot in the forehead by a .22 pistol, Matrix \"dies\" and finds ...",
+      "rating": "1",
+      "poster": "https://m.media-amazon.com/images/M/MV5BYzUzOTA5ZTMtMTdlZS00MmQ5LWFmNjEtMjE5MTczN2RjNjE3XkEyXkFqcGdeQXVyNTc2ODIyMzY@._V1_SX300.jpg",
       "id": 15
     },
     {
-      "title": "Lion King",
-      "rating": "",
-      "description": "1",
+      "title": "The Last Jedi",
+      "description": "Rey develops her newly discovered abilities with the guidance of Luke Skywalker, who is unsettled by the strength of her powers. Meanwhile, the Resistance prepares for battle with the First Order.",
+      "rating": "1",
+      "poster": "https://m.media-amazon.com/images/M/MV5BMjQ1MzcxNjg4N15BMl5BanBnXkFtZTgwNzgwMjY4MzI@._V1_SX300.jpg",
       "id": 16
+    },
+    {
+      "title": "The Empire Strikes Back",
+      "description": "After the Rebels are brutally overpowered by the Empire on the ice planet Hoth, Luke Skywalker begins Jedi training with Yoda, while his friends are pursued by Darth Vader and a bounty hunter named Boba Fett all over the galaxy.",
+      "rating": "1",
+      "poster": "https://m.media-amazon.com/images/M/MV5BYmU1NDRjNDgtMzhiMi00NjZmLTg5NGItZDNiZjU5NTU4OTE0XkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_SX300.jpg",
+      "id": 17
     }
   ]
 }

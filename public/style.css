@@ -1,14 +1,11 @@
 html, body {
-    height: 100%;
+    margin: 0;
+
+    height: 100vh;
     font-family: 'Open Sans', sans-serif;
 }
 
-/*.center {*/
-/*    display: flex;*/
-/*    justify-content: center;*/
-/*    align-items: center;*/
-/*}*/
-
+/* MAIN CONTENT */
 .container {
     position: relative;
     top: 50%;
@@ -22,34 +19,27 @@ html, body {
     flex-wrap: wrap;
 }
 
-.title-input {
-    border-radius: 20px;
-}
-
-.add {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: linear-gradient(45deg, #16BFFD, #CB3066);
-    font-size: 6em;
-}
-
-
-/* CARD */
-.ma-card {
+/* CARDS */
+.card {
     display: inline-block;
     width: 300px;
     height: 420px;
     margin: 20px;
 }
 
-.ma-card-inner {
+.card:hover {
+    position: relative;
+    top: -10px;
+    cursor: pointer;
+}
+
+.card-inner {
     position: relative;
     width: 300px;
     height: 420px;
 }
 
-.ma-card-front, .ma-card-back {
+.card-front, .card-back {
     background-color: #fff;
     border-radius: 20px;
     box-shadow: 0 15px 25px rgba(0,0,0,0.2);
@@ -65,7 +55,7 @@ html, body {
     border-radius: 20px;
 }
 
-.ma-card-header {
+.card-header {
     padding-top: 1em;
     display: flex;
     flex-direction: column;
@@ -74,24 +64,56 @@ html, body {
     color: white;
 }
 
-.ma-card-header .movie-rating {
-    margin-top: 0;
-}
-
-.ma-card-body {
+.top-right {
     position: absolute;
-    bottom: 10px;
-    text-align: center;
-    padding: 1em 1em 2em 1em;
+    top: 10px;
+    right: 10px;
 }
 
+.top-right:hover {
+
+}
+
+.top-left {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+
+.top-left:hover {
+    color: red;
+}
+
+.card-body {
+    position: absolute;
+    bottom: 0px;
+    text-align: center;
+    padding: 1em 1em 0.5em 1em;
+}
 
 /* CARD FORM */
+
+#card-add .card-inner .card-front {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(45deg, #16BFFD, #CB3066);
+    font-size: 6em;
+    color: white;
+}
+
+.float {
+    position: relative;
+    top: -10px;
+    color: lightpink;
+}
+
 .movie-input {
     border-radius: 40px;
     border: 1px solid lightgray;
 }
 
+/* Refactor these into classes */
 .movie-input:focus {
     outline: none;
 }
@@ -114,9 +136,8 @@ html, body {
     outline: none;
 }
 
-
 /* STARS */
-.rating {
+rating {
     unicode-bidi: bidi-override;
     direction: rtl;
     text-align: center;
@@ -141,19 +162,13 @@ input[name='rating'] {
     display: inline-block;
 }
 
-
-
-
-
-
 /* CARD FLIP */
-.ma-card {
+.card {
     background-color: transparent;
-    perspective: 1000px; /* Remove this if you don't want the 3D effect */
+    perspective: 1000px;
 }
 
-/* This container is needed to position the front and back side */
-.ma-card-inner {
+.card-inner {
     position: relative;
     width: 100%;
     height: 100%;
@@ -166,13 +181,7 @@ input[name='rating'] {
     transform: rotateY(180deg);
 }
 
-/* Do an horizontal flip when you move the mouse over the flip box container */
-.ma-card:hover .ma-card-inner {
-    transform: rotateY(180deg);
-}
-
-/* Position the front and back side */
-.ma-card-front, .ma-card-back {
+.card-front, .card-back {
     position: absolute;
     width: 100%;
     height: 100%;
@@ -180,14 +189,11 @@ input[name='rating'] {
     backface-visibility: hidden;
 }
 
-/* Style the front side (fallback if image is missing) */
-.ma-card-front {
-    /*background-color: #bbb;*/
+.card-front {
     color: black;
 }
 
-/* Style the back side */
-.ma-card-back {
+.card-back {
     transform: rotateY(180deg);
 }
 

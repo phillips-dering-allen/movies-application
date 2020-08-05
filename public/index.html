@@ -1,118 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8"/>
-    <title>My Application</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/all.min.css">
-    <!--    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css" integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">-->
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/style.css"/>
+    <link rel="stylesheet" href="./style.css">
+    <title>Movies Appliction</title>
 </head>
 <body>
 
-<div id="container" class="container-fluid">
-    <div id="movie-box" class="d-flex flex-wrap justify-content-center">
+<!-- Main Container -->
+<div id="container">
+    <form id="DYLAN">
+        DYLAN
+    </form>
 
-    </div>
-    <!--    <form>-->
-    <!--        <label for="movie-title">Movie Title</label>-->
-    <!--        <input type="text" id="movie-title">-->
-
-    <!--        <select name="movie-rating" id="movie-rating">-->
-    <!--            <option value="1">-->
-    <!--                *-->
-    <!--            </option>-->
-    <!--            <option value="2">**</i></option>-->
-    <!--            <option value="3">***</option>-->
-    <!--            <option value="4">****</option>-->
-    <!--            <option value="5">*****</option>-->
-    <!--        </select>-->
-
-    <!--        <button id="movie-submit">ADD MOVIE</button>-->
-    <!--    </form>-->
-</div>
-
-<!--<div class="ma-card">-->
-<!--    <div class="ma-card-front add">-->
-<!--        <i id="add-movie" class="far fa-plus-square"></i>-->
-<!--    </div>-->
-<!--</div>-->
-
-<div class="ma-card">
-    <div class="ma-card-inner">
-        <div class="add ma-card-front">
-            <i id="add-movie" class="far fa-plus-square"></i>
-        </div>
-        <div class="ma-card-back">
-            <form style="height: 100%; Width: 100%">
-                <div class="ma-card-header circle">
-                    <div>
-                        <input class="movie-input" type="text" id="movie-title" placeholder="Movie Title">
-                    </div>
-                </div>
-
-                <div class="ma-card-body">
-                    <div>
-                        <textarea class="movie-description" id="movie-description" placeholder="Description"></textarea>
-                    </div>
-
-                    <div class="rating">
-
-                        <input type="radio" id="star-1" name="rating" value="1">
-                        <label for="star-1"><i class="fas fa-star"></i></label>
-
-                        <input type="radio" id="star-2" name="rating" value="2">
-                        <label for="star-2"><i class="fas fa-star"></i></label>
-
-                        <input type="radio" id="star-3" name="rating" value="3">
-                        <label for="star-3"><i class="fas fa-star"></i></label>
-
-                        <input type="radio" id="star-4" name="rating" value="4">
-                        <label for="star-4"><i class="fas fa-star"></i></label>
-
-                        <input type="radio" id="star-5" name="rating" value="5">
-                        <label for="star-5"><i class="fas fa-star"></i></label>
-
-                    </div>
-
-                    <button id="movie-submit">ADD MOVIE</button>
-                </div>
-            </form>
+    <div id="movie-box">
+        <div class="sk-cube-grid">
+            <div class="sk-cube sk-cube1"></div>
+            <div class="sk-cube sk-cube2"></div>
+            <div class="sk-cube sk-cube3"></div>
+            <div class="sk-cube sk-cube4"></div>
+            <div class="sk-cube sk-cube5"></div>
+            <div class="sk-cube sk-cube6"></div>
+            <div class="sk-cube sk-cube7"></div>
+            <div class="sk-cube sk-cube8"></div>
+            <div class="sk-cube sk-cube9"></div>
         </div>
     </div>
 </div>
 
-<!--    <div class="card">-->
-<!--        <div class="card-inner">-->
-<!--            <div class="card-front">-->
-<!--                <div class="card-header circle">-->
-<!--                    <h2 class="movie-title">THE LION KING 3: ELECTRIC BOOGALOO</h2>-->
-<!--                    <h3 class="movie-rating">-->
-<!--                        <i class="fas fa-star"></i>-->
-<!--                        <i class="fas fa-star"></i>-->
-<!--                        <i class="fas fa-star"></i>-->
-<!--                        <i class="fas fa-star"></i>-->
-<!--                        <i class="fas fa-star"></i>-->
-<!--                    </h3>-->
-<!--                </div>-->
-<!--                <div class="card-body">-->
-<!--                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus dolorem doloremque earum impedit rem rerum unde vero. Adipisci, delectus dolor dolores impedit ipsa modi molestias odio officiis, omnis ratione vel.</p>-->
-<!--&lt;!&ndash;                    <div class="movie-edit2">&ndash;&gt;-->
-<!--&lt;!&ndash;                        <i class="far fa-edit"></i>&ndash;&gt;-->
-<!--&lt;!&ndash;                    </div>&ndash;&gt;-->
-<!--                </div>-->
-<!--            </div>-->
-<!--            <div class="card-back">-->
-<!--                <form>-->
-<!--                    <input class="title-input" type="text" placeholder="Title">-->
-<!--                    <textarea class="description-input" name="" id="" cols="30" rows="10"></textarea>-->
-<!--                </form>-->
-<!--            </div>-->
-<!--        </div>-->
-<!--    </div>-->
-
-
-<script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
-<script src="./main.js"></script>
+<!-- Scripts -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
+<script src="main.js"></script>
 </body>
 </html>
