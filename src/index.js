@@ -50,4 +50,10 @@ $('#movie-submit').click((e) => {
 // })
 
 
-// Adding
+// Stars rating
+$('.rating label i').click((e) => {
+  const attr = e.currentTarget.parentNode.getAttribute('for');
+  console.log($("#" + attr).siblings("input"));
+
+  console.log(e.currentTarget.parentNode)
+});

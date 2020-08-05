@@ -137,6 +137,10 @@ input[name='rating'] {
     display: none;
 }
 
+.radio-group {
+    display: inline-block;
+}
+
 
 
 
