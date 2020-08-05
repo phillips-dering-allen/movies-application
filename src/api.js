@@ -7,12 +7,16 @@ module.exports = {
     return fetch(`/api/movies/${id}`)
         .then(response => response.json());
   },
-  postMovie: (title, rating, id) => {
-    const movie = {
-      title,
-      rating,
-      id: id + 1
-    }
+   getMovieInfo: (key, movie) => {
+    fetch(`http://www.omdbapi.com/?apikey=${key}&t=${title}`)
+        .then(response => response.json())
+        .then(data => movie.poster = data.Poster)
+        .catch(error => {
+          console.log("IT FAILED");
+          movie.poster =  "https://m.media-amazon.com/images/M/MV5BMTkxNDc3OTcxMV5BMl5BanBnXkFtZTgwODk2NjAzOTE@._V1_SX300.jpg"
+    });
+  },
+  postMovie: (key, movie) => {
     return fetch(`/api/movies`, {
       method: 'POST',
       headers: {

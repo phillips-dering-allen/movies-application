@@ -44,35 +44,39 @@
             <i id="add-movie" class="far fa-plus-square"></i>
         </div>
         <div class="ma-card-back">
-            <form>
-                <div>
-                    <input class="movie-input" type="text" id="movie-title" placeholder="Movie Title">
+            <form style="height: 100%; Width: 100%">
+                <div class="ma-card-header circle">
+                    <div>
+                        <input class="movie-input" type="text" id="movie-title" placeholder="Movie Title">
+                    </div>
                 </div>
 
-                <div>
-                    <textarea class="movie-description" id="movie-description" placeholder="Description"></textarea>
+                <div class="ma-card-body">
+                    <div>
+                        <textarea class="movie-description" id="movie-description" placeholder="Description"></textarea>
+                    </div>
+
+                    <div class="rating">
+
+                        <input type="radio" id="star-1" name="rating" value="1">
+                        <label for="star-1"><i class="fas fa-star"></i></label>
+
+                        <input type="radio" id="star-2" name="rating" value="2">
+                        <label for="star-2"><i class="fas fa-star"></i></label>
+
+                        <input type="radio" id="star-3" name="rating" value="3">
+                        <label for="star-3"><i class="fas fa-star"></i></label>
+
+                        <input type="radio" id="star-4" name="rating" value="4">
+                        <label for="star-4"><i class="fas fa-star"></i></label>
+
+                        <input type="radio" id="star-5" name="rating" value="5">
+                        <label for="star-5"><i class="fas fa-star"></i></label>
+
+                    </div>
+
+                    <button id="movie-submit">ADD MOVIE</button>
                 </div>
-
-                <div class="rating">
-
-                    <input type="radio" id="star-1" name="rating" value="1">
-                    <label for="star-1"><i class="fas fa-star"></i></label>
-
-                    <input type="radio" id="star-2" name="rating" value="2">
-                    <label for="star-2"><i class="fas fa-star"></i></label>
-
-                    <input type="radio" id="star-3" name="rating" value="3">
-                    <label for="star-3"><i class="fas fa-star"></i></label>
-
-                    <input type="radio" id="star-4" name="rating" value="4">
-                    <label for="star-4"><i class="fas fa-star"></i></label>
-
-                    <input type="radio" id="star-5" name="rating" value="5">
-                    <label for="star-5"><i class="fas fa-star"></i></label>
-
-                </div>
-
-                <button id="movie-submit">ADD MOVIE</button>
             </form>
         </div>
     </div>

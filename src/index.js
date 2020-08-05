@@ -2,8 +2,9 @@
 import * as key from './keys';
 import * as view from './views';
 
+
 /* require style imports */
-const {getMovies, getMovie, postMovie} = require('./api.js');
+const {getMovies, getMovie, getMovieInfo, postMovie} = require('./api.js');
 
 const state = {}
 
@@ -32,13 +33,30 @@ init();
 /* Event Listeners */
 $('#movie-submit').click((e) => {
   e.preventDefault();
-  const movie = {
+  let movie = {
     title: $('#movie-title').val(),
-    rating: $('#movie-rating').val()
+    rating: $('#movie-description').val(),
+    description: $('input[name="rating"]').val(),
+    id: state.length + 1,
   }
-  postMovie(movie.title, movie.rating).then();
-  view.clearInput();
-  init();
+
+  // getMovieInfo(key.openMovieDB, movie)
+  //     .then(() => {
+  //       postMovie(key.openMovieDB, movie).then();
+  //       view.clearInput();
+  //       init();
+  //     })
+  //     .catch(error => {
+  //       console.log("IT FAILED");
+  //       movie.poster = "https://m.media-amazon.com/images/M/MV5BMTkxNDc3OTcxMV5BMl5BanBnXkFtZTgwODk2NjAzOTE@._V1_SX300.jpg";
+  //     });
+
+  // console.log(movie.title);
+  // console.log(movie.description);
+  // console.log(movie.rating);
+  // postMovie(key.openMovieDB, movie.title, movie.description, movie.rating, state.length).then();
+  // view.clearInput();
+  // init();
 });
 
 
@@ -54,6 +72,6 @@ $('#movie-submit').click((e) => {
 $('.rating label i').click((e) => {
   const attr = e.currentTarget.parentNode.getAttribute('for');
   console.log($("#" + attr).siblings("input"));
-
-  console.log(e.currentTarget.parentNode)
+  //
+  // console.log(e.currentTarget.parentNode)
 });
