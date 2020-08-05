@@ -15,6 +15,9 @@ const renderMovie = (movie) => {
             <div class="ma-card-back">
                 <div class="ma-card-header circle" style="background-color: ${getRandomColor()}">
                     <h2 class="movie-title">${movie.title}</h2>
+                </div>
+                <div class="ma-card-body">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus dolorem doloremque earum impedit rem rerum unde vero. Adipisci, delectus dolor dolores impedit ipsa modi molestias odio officiis, omnis ratione vel.</p>
                     <h3 class="movie-rating">
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star"></i>
@@ -22,9 +25,6 @@ const renderMovie = (movie) => {
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star"></i>
                     </h3>
-                </div>
-                <div class="ma-card-body">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus dolorem doloremque earum impedit rem rerum unde vero. Adipisci, delectus dolor dolores impedit ipsa modi molestias odio officiis, omnis ratione vel.</p>
                 </div>
             </div>
         </div>

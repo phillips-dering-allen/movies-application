@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
+    <meta charset="UTF-8"/>
     <title>My Application</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/all.min.css">
-<!--    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css" integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">-->
+    <!--    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css" integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">-->
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/style.css" />
+    <link rel="stylesheet" href="/style.css"/>
 </head>
 <body>
 
@@ -14,27 +14,65 @@
     <div id="movie-box" class="d-flex flex-wrap justify-content-center">
 
     </div>
-    <form>
-        <label for="movie-title">Movie Title</label>
-        <input type="text" id="movie-title">
+    <!--    <form>-->
+    <!--        <label for="movie-title">Movie Title</label>-->
+    <!--        <input type="text" id="movie-title">-->
 
-        <select name="movie-rating" id="movie-rating">
-            <option value="1">
-                *
-            </option>
-            <option value="2">**</i></option>
-            <option value="3">***</option>
-            <option value="4">****</option>
-            <option value="5">*****</option>
-        </select>
+    <!--        <select name="movie-rating" id="movie-rating">-->
+    <!--            <option value="1">-->
+    <!--                *-->
+    <!--            </option>-->
+    <!--            <option value="2">**</i></option>-->
+    <!--            <option value="3">***</option>-->
+    <!--            <option value="4">****</option>-->
+    <!--            <option value="5">*****</option>-->
+    <!--        </select>-->
 
-        <button id="movie-submit">ADD MOVIE</button>
-    </form>
+    <!--        <button id="movie-submit">ADD MOVIE</button>-->
+    <!--    </form>-->
 </div>
 
+<!--<div class="ma-card">-->
+<!--    <div class="ma-card-front add">-->
+<!--        <i id="add-movie" class="far fa-plus-square"></i>-->
+<!--    </div>-->
+<!--</div>-->
+
 <div class="ma-card">
-    <div class="ma-card-front add">
-        <i class="far fa-plus-square"></i>
+    <div class="ma-card-inner">
+        <div class="add ma-card-front">
+            <i id="add-movie" class="far fa-plus-square"></i>
+        </div>
+        <div class="ma-card-back">
+            <form>
+                <div>
+                    <input class="movie-input" type="text" id="movie-title" placeholder="Movie Title">
+                </div>
+
+                <div>
+                    <textarea class="movie-description" id="movie-description" placeholder="Description"></textarea>
+                </div>
+
+                <div class="rating">
+                    <input type="radio" id="star-1" name="rating" value="1">
+                    <label for="star-1"><i class="fas fa-star"></i></label>
+
+                    <input type="radio" id="star-2" name="rating" value="2">
+                    <label for="star-2"><i class="fas fa-star"></i></label>
+
+                    <input type="radio" id="star-3" name="rating" value="3">
+                    <label for="star-3"><i class="fas fa-star"></i></label>
+
+                    <input type="radio" id="star-4" name="rating" value="4">
+                    <label for="star-4"><i class="fas fa-star"></i></label>
+
+                    <input type="radio" id="star-5" name="rating" value="5">
+                    <label for="star-5"><i class="fas fa-star"></i></label>
+                </div>
+
+                <button id="movie-submit">ADD MOVIE</button>
+            </form>
+        </div>
     </div>
 </div>
 
@@ -68,7 +106,8 @@
 <!--    </div>-->
 
 
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
 <script src="./main.js"></script>
 </body>
 </html>

@@ -40,3 +40,14 @@ $('#movie-submit').click((e) => {
   view.clearInput();
   init();
 });
+
+
+// $('.add').click((e) => {
+//   e.preventDefault();
+//   const addMovie = {
+//
+//   }
+// })
+
+
+// Adding

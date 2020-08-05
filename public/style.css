@@ -61,7 +61,7 @@ html, body {
     width: 100%;
     height: 100%;
     background-color: dodgerblue;
-    clip-path: circle(180px at center 0);
+    clip-path: circle(160px at center 0);
     border-radius: 20px;
 }
 
@@ -84,6 +84,63 @@ html, body {
     text-align: center;
     padding: 1em 1em 2em 1em;
 }
+
+
+/* CARD FORM */
+.movie-input {
+    border-radius: 40px;
+    border: 1px solid lightgray;
+}
+
+.movie-input:focus {
+    outline: none;
+}
+
+.movie-input::placeholder {
+    text-align: center;
+}
+
+#movie-description {
+    resize: none;
+    border-radius: 10px;
+    border: 1px solid lightgray;
+}
+
+#movie-description::placeholder {
+    text-align: center;
+}
+
+#movie-description:focus {
+    outline: none;
+}
+
+
+/* STARS */
+.rating {
+    unicode-bidi: bidi-override;
+    direction: rtl;
+    text-align: center;
+}
+.rating > label {
+    display: inline-block;
+    position: relative;
+    width: 1.1em;
+}
+
+
+.rating > label:hover ~ label i:before,
+.rating > label:hover {
+    color: gold;
+}
+
+input[name='rating'] {
+    display: none;
+}
+
+
+
+
+
 
 /* CARD FLIP */
 .ma-card {
