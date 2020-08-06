@@ -9,11 +9,12 @@
     },
     {
       "title": "Star Wars: A New Hope",
-      "director": "",
-      "description": "",
+      "director": "George Lucas",
+      "description": "STAR",
       "poster": "https://m.media-amazon.com/images/M/MV5BNzVlY2MwMjktM2E4OS00Y2Y3LWE3ZjctYzhkZGM3YzA1ZWM2XkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_SX300.jpg",
       "genre": [
-        "action"
+        "action",
+        "western"
       ],
       "id": 2
     },
@@ -26,10 +27,11 @@
     },
     {
       "title": "Yes",
-      "description": "In this film, told almost entirely in iambic pentameter, She is a scientist in a loveless marriage to Anthony, a devious politician. He is a Lebanese doctor in self-imposed exile, working ...",
-      "rating": "1",
-      "id": 4,
-      "poster": "https://m.media-amazon.com/images/M/MV5BMTMxNzAyMTg4NV5BMl5BanBnXkFtZTcwNjUwMTkyMQ@@._V1_SX300.jpg"
+      "director": "",
+      "description": "In this film, in self-imposed exile, working ...",
+      "poster": "https://m.media-amazon.com/images/M/MV5BMTMxNzAyMTg4NV5BMl5BanBnXkFtZTcwNjUwMTkyMQ@@._V1_SX300.jpg",
+      "genre": [],
+      "id": 4
     },
     {
       "title": "The Lion King",
@@ -89,9 +91,13 @@
     },
     {
       "title": "John Wick",
+      "director": "",
       "description": "An ex-hit-man comes out of retirement to track down the gangsters that killed his dog and took everything from him.",
-      "rating": "1",
       "poster": "https://m.media-amazon.com/images/M/MV5BMTU2NjA1ODgzMF5BMl5BanBnXkFtZTgwMTM2MTI4MjE@._V1_SX300.jpg",
+      "genre": [
+        "action",
+        "crime"
+      ],
       "id": 13
     },
     {
@@ -122,10 +128,15 @@
       "id": 17
     },
     {
-      "title": "home alone",
-      "description": "An eight-year-old troublemaker must protect his house from a pair of burglars when he is accidentally left home alone by his family during Christmas vacation.",
-      "rating": "1",
+      "title": "home alon",
+      "director": "",
+      "description": "",
       "poster": "https://m.media-amazon.com/images/M/MV5BMzFkM2YwOTQtYzk2Mi00N2VlLWE3NTItN2YwNDg1YmY0ZDNmXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_SX300.jpg",
+      "genre": [
+        "action",
+        "drama",
+        "historical"
+      ],
       "id": 18
     },
     {
@@ -144,11 +155,12 @@
       "title": "Black Hawk Down",
       "director": "Ridley Scott",
       "description": "160 elite U.S. soldiers drop into Somalia to capture two top lieutenants of a renegade warlord and find themselves in a desperate battle with a large force of heavily-armed Somalis.",
+      "rating": 5,
       "poster": "https://m.media-amazon.com/images/M/MV5BYWMwMzQxZjQtODM1YS00YmFiLTk1YjQtNzNiYWY1MDE4NTdiXkEyXkFqcGdeQXVyNDYyMDk5MTU@._V1_SX300.jpg",
       "genre": [
-        "Drama",
-        "History",
-        "War"
+        "war",
+        "drama",
+        "historical"
       ],
       "id": 20
     },

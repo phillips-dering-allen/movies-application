@@ -20,7 +20,7 @@
             <a data-toggle="modal" data-target="#modal-form"><i id="icon-add" class="far fa-plus-square"></i></a>
             <form class="ml-2" id="search">
                 <div class="input-group">
-                    <input type="text" class="form-control input-form" placeholder="Search by movie, genre, author, rating" aria-label="Search by movie, genre, author, rating" aria-describedby="button-addon2">
+                    <input type="text" class="form-control input-form" placeholder="Search by movie, genre, author, rating" aria-label="Search by movie, genre, author, rating" aria-describedby="button-addon2" id="search-input">
                     <button class="btn btn-outline-secondary" type="submit" id="search-submit"><i class="fas fa-search"></i></button>
                 </div>
             </form>
@@ -66,7 +66,7 @@
                                     </div>
                                     <div class="input-group mb-3">
                                         <div class="input-group-prepend">
-                                            <span class="input-group-text">Description</span>
+                                            <span class="input-group-text" id="form-movie-description">Description</span>
                                         </div>
                                         <textarea class="form-control" aria-label="With textarea" style="resize: none"></textarea>
                                     </div>

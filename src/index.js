@@ -1,6 +1,7 @@
 /* IMPORTS */
 import * as key from './keys';
 import * as view from './views';
+import {renderMovies} from "./views";
 
 const {getMovies, postMovie, getMovie, patchMovie, deleteMovie} = require('./api.js');
 
@@ -19,6 +20,8 @@ const update = (movie) => {
 const init = () => {
     getMovies()
         .then(movies => {
+            state.movies = movies;
+            console.log(state.movies);
             view.renderMovies(movies);
         })
         .catch(error => alert(error));
@@ -61,10 +64,12 @@ $('#movie-box').on('click', '.top-right', (e) => {
         $('#form-movie-url').parent().next().val(movie.poster);
         $('#form-movie-image').attr('src',`${movie.poster}`);
 
-        $('input[type="checkbox"]').each((i,e) => {
-            if(movie.genre.indexOf(e.value) !== -1)
-                $(e).prop("checked", true);
-        });
+        if(movie.genre) {
+            $('input[type="checkbox"]').each((i,e) => {
+                if(movie.genre.indexOf(e.value) !== -1)
+                    $(e).prop("checked", true);
+            });
+        }
     });
 
 });
@@ -74,6 +79,7 @@ $('#modal-form').on('click', '#trash', () => {
     deleteMovie($('input[type="hidden"]').attr("data-id")).then();
     view.toggleInputForm();
     $('#form-movie-image').attr("src","https://m.media-amazon.com/images/M/MV5BMTkxNDc3OTcxMV5BMl5BanBnXkFtZTgwODk2NjAzOTE@._V1_SX300.jpg");
+    view.removeMovie($('input[type="hidden"]').attr("data-id"));
     view.clearInput();
     $('#modal-form').modal('hide');
 });
@@ -92,8 +98,8 @@ $('#input-submit').click((e) => {
     const movie = {
         title: $('#form-movie-title').parent().next().val(),
         director: $('#form-movie-director').parent().next().val(),
-        description: "",
-        rating: "",
+        description: $('#form-movie-description').parent().next().val(),
+        rating: $('#form-rating input[type="radio"]:checked').val(),
         poster: $('#form-movie-url').parent().next().val(),
         genre: []
     }
@@ -127,7 +133,7 @@ $('#input-submit').click((e) => {
                         movie.description = data.Plot;
                     if (movie.director.length === 0)
                         movie.director = data.Director;
-                    if (movie.genre.length === 0)
+                    if (movie.genre.length === 0 && data.Genre)
                         movie.genre = data.Genre.split(', ');
                     postMovie(movie)
                         .then((response) => response.json())
@@ -140,6 +146,35 @@ $('#input-submit').click((e) => {
     } else {
         alert("Please enter a title");
     }
+});
+
+$("#search-input").keyup(() => {
+    const search = $('#search-input').val().toLowerCase();
+    const bucket = [];
+    state.movies.forEach(movie => {
+        for(const key in movie) {
+            console.log(key);
+            if(movie[key]) {
+                if(Array.isArray(movie[key])) {
+                    const string = movie[key].join(' ').toLowerCase();
+                    if(string.includes(search)) {
+                        bucket.push(movie);
+                        break;
+                    }
+                } else if(typeof movie[key] === "number") {
+                    console.log("NUMBER");
+                } else {
+                    if(movie[key].toLowerCase().includes(search)) {
+                        bucket.push(movie);
+                        break;
+                    }
+                }
+            }
+        }
+    });
+    console.log(bucket);
+
+    renderMovies(bucket);
 });
 
 // $('#form-rating input[type="radio"]').click((e) => {

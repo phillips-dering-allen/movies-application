@@ -1,7 +1,7 @@
 // Colors for movie-card back
 const getRandomColor = () => {
     const colors = ['#8a0e40', '#f0ad4e', '#fccc3f', '#029658', '#5bc0de', '#343464', '#6454ac', '#ec4c8c', '#008080', '#878787'];
-    return colors[Math.floor(Math.random() * colors.length) + 1];
+    return colors[Math.floor(Math.random() * colors.length)];
 };
 
 // Add button
@@ -51,8 +51,24 @@ const renderAdd = () => {
     `
 };
 
+export const removeMovie = (id) => {
+    $(`div[data-id="${id}"]`).remove();
+}
+
 // Adding a new movie movie-card
 export const renderMovie = (movie) => {
+    let html = ``, tag = ``;
+    if(movie.rating) {
+        for(let i=0; i<movie.rating; i++) {
+            html += `<i class="fas fa-star"></i>`
+        }
+    }
+    if(movie.genre && movie.genre.length <= 3) {
+        for(let i=0; i<movie.genre.length; i++) {
+            tag += `<div class="tag mx-2 p-1 rounded" style="background-color: ${getRandomColor()}; border: 1px solid black">${movie.genre[i]}</div>`
+        }
+    }
+    console.log(html);
     return `
     <div class="movie-card" data-id="${movie.id}">
         <div class="movie-card-inner">
@@ -67,13 +83,12 @@ export const renderMovie = (movie) => {
                 </div>
                 <div class="movie-card-body">
                     <p>${movie.description}</p>
-                    <h4 class="movie-rating">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
+                    <h4 class="movie-view-rating">
+                        ${html}
                     </h4>
+                    <div class="movie-tags d-flex flex-shrink-1 justify-content-center">
+                        ${tag}
+                    </div>
                 </div>
             </div>
         </div>

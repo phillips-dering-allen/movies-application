@@ -293,6 +293,19 @@ input[name='rating'] {
     transform: rotateY(180deg);
 }
 
+.movie-card-body {
+    width: 100%;
+}
+
+.movie-view-rating {
+    color: gold;
+}
+
+.tag {
+    font-size: 0.6em;
+    color: white;
+}
+
 
 /* CSS LOADING ANIMATION */
 .sk-cube-grid {
