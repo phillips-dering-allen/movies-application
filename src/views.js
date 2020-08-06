@@ -1,4 +1,4 @@
-// Colors for card back
+// Colors for movie-card back
 const getRandomColor = () => {
     const colors = ['#8a0e40', '#f0ad4e', '#fccc3f', '#029658', '#5bc0de', '#343464', '#6454ac', '#ec4c8c', '#008080', '#878787'];
     return colors[Math.floor(Math.random() * colors.length) + 1];
@@ -7,20 +7,20 @@ const getRandomColor = () => {
 // Add button
 const renderAdd = () => {
     return `
-        <div class="card" id="card-add">
-            <div class="card-inner">
-                <div class="card-front">
+        <div class="movie-card" id="card-add">
+            <div class="movie-card-inner">
+                <div class="movie-card-front">
                     <i id="icon-add" class="far fa-plus-square"></i>
                 </div>
-                <div class="card-back">
+                <div class="movie-card-back">
                     <form style="height: 100%; Width: 100%">
-                        <div class="card-header circle">
+                        <div class="movie-card-header circle">
                             <div>
                                 <input class="movie-input" type="text" id="movie-title" placeholder="Movie Title">
                             </div>
                         </div>
         
-                        <div class="card-body">
+                        <div class="movie-card-body">
                             <div>
                                 <textarea class="movie-description" id="movie-description" placeholder="Description"></textarea>
                             </div>
@@ -51,29 +51,29 @@ const renderAdd = () => {
     `
 };
 
-// Adding a new movie card
+// Adding a new movie movie-card
 export const renderMovie = (movie) => {
     return `
-    <div class="card" data-id="${movie.id}">
-        <div class="card-inner">
-            <div class="card-front" style="background-image: url(${movie.poster});"></div>
-            <div class="card-back">
-                <div class="card-header circle" style="background-color: ${getRandomColor()}">
-                    <div class="header-title">
-                        <h2 class="movie-title">${movie.title}</h2>
+    <div class="movie-card" data-id="${movie.id}">
+        <div class="movie-card-inner">
+            <div class="movie-card-front" style="background-image: url(${movie.poster});"></div>
+            <div class="movie-card-back">
+                <div class="movie-card-header circle" style="background-color: ${getRandomColor()}">
+                    <div class="header-title mt-2">
+                        <h3 class="movie-title">${movie.title}</h3>
                     </div>
                     <i class="fas fa-times top-left"></i>
                     <i class="fas fa-edit top-right"></i>
                 </div>
-                <div class="card-body">
+                <div class="movie-card-body">
                     <p>${movie.description}</p>
-                    <h3 class="movie-rating">
+                    <h4 class="movie-rating">
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star"></i>
-                    </h3>
+                    </h4>
                 </div>
             </div>
         </div>
@@ -93,7 +93,7 @@ export const renderMovies = (movies) => {
 
 // export const drawCard = () => {
 //     let html = `
-//         <div class="card"></div>
+//         <div class="movie-card"></div>
 //     `;
 //     $('#movie-box').append(html);
 // }
@@ -116,7 +116,7 @@ export const renderLoader = () => {
     $('#movie-box').html("").append(html);
 };
 
-// Clearing add movie card
+// Clearing add movie movie-card
 export const clearInput = () => {
     $('#movie-title').val("");
     $('#movie-rating').val(1);

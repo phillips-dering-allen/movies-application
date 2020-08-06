@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/all.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css" integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./style.css">
     <title>Movies Appliction</title>
@@ -11,22 +12,33 @@
 <body>
 
 <!-- Main Container -->
-<div class="header-container">
-    <h1>Movie Application</h1>
-</div>
+<header class="p-1"><h1>Movie Application</h1></header>
 
-<div id="container">
-    <div class="search-header">
-        <div class="add-button">
-            <i id="icon-add" class="far fa-plus-square"></i>
-        </div>
-        <form class="search-bar">
-            <input type="text" id="search-bar" placeholder="Search for a movie" style="width: 210px; height: 40px">
-        </form>
-        <div class="search-icon">
-            <i id="search-icon" class="fas fa-search"></i>
+<div class="container-fluid">
+    <div class="container mt-4">
+        <div class="d-flex align-items-center justify-content-center">
+            <div class="d-flex align-items-center justify-content-center">
+                <i class="far fa-plus-square add-button"></i>
+            </div>
+            <form id="search">
+                <div class="input-group mb-3">
+                    <input type="text" class="form-control" placeholder="Search by movie, genre, author, rating" aria-label="Search by movie, genre, author, rating" aria-describedby="button-addon2">
+                    <button class="btn btn-outline-secondary" type="submit" id="search-submit"><i class="fas fa-search"></i></button>
+                </div>
+            </form>
         </div>
     </div>
+<!--    <div class="search-header">-->
+<!--        <div class="add-button">-->
+<!--            <i id="icon-add" class="far fa-plus-square"></i>-->
+<!--        </div>-->
+<!--        <form class="search-bar">-->
+<!--            <input type="text" id="search-bar" placeholder="Search for a movie" style="width: 210px; height: 40px">-->
+<!--        </form>-->
+<!--        <div class="search-icon">-->
+<!--            <i id="search-icon" class="fas fa-search"></i>-->
+<!--        </div>-->
+<!--    </div>-->
 
     <div id="movie-box">
         <div class="sk-cube-grid">

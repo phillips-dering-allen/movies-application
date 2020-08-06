@@ -54,7 +54,7 @@ $('#movie-box').on("click","#movie-submit",((e) => {
 //
 // })
 
-$('#movie-box').on('click','.card', (e) => {
+$('#movie-box').on('click','.movie-card', (e) => {
   if(!state.flipped) {
     state.currentlyFlipped = e.currentTarget.children[0];
     state.currentlyFlipped.classList.toggle('flip');
