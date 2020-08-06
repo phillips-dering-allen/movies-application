@@ -33,12 +33,18 @@ header {
 .add-button, .search-icon {
     display: flex;
     align-items: center;
+    justify-content: center;
 }
 
 #icon-add, #search-icon {
     background: linear-gradient(45deg, #16BFFD, #CB3066);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+}
+
+.input-form {
+    display: flex;
+    align-items: center;
 }
 
 #icon-add {
