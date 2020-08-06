@@ -7,9 +7,6 @@ module.exports = {
         return fetch(`/api/movies/${id}`)
             .then(response => response.json());
     },
-    getMovieInfo: (key, title) => {
-        return fetch(`http://www.omdbapi.com/?apikey=${key}&t=${title}`).then(response => response.json());
-    },
     postMovie: (movie) => {
         if(!movie.poster) {
             movie.poster = "https://m.media-amazon.com/images/M/MV5BMTkxNDc3OTcxMV5BMl5BanBnXkFtZTgwODk2NjAzOTE@._V1_SX300.jpg";

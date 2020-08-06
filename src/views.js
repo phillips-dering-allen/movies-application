@@ -113,14 +113,40 @@ export const renderLoader = () => {
                 <div class="sk-cube sk-cube9"></div>
         </div>
     `;
-    $('#movie-box').html("").append(html);
+    $('#form-movie-container').append(html);
 };
+
+export const toggleImageHide = () => {
+    $('#form-movie-image').toggle();
+}
 
 // Clearing add movie movie-card
 export const clearInput = () => {
-    $('#movie-title').val("");
-    $('#movie-rating').val(1);
+    $('#form-movie-url').parent().next().val("");
+    $('#form-movie-title').parent().next().val("");
+    $('#form-movie-director').parent().next().val("");
+    $('#form-movie-description').parent().next().val("");
+    // $("#form-").prop("checked", false);
+
+    $('input[type="checkbox"]:checked').each((i, e) => {
+        $(e).prop("checked", false);
+    });
+
+    $('#form-rating input[type="radio"]:checked').prop("checked", false);
 };
+
+export const toggleInputForm = (state) => {
+    const header = $('#form-title');
+    const submit = $('#input-submit');
+
+    if(state) {
+        header.text("EDIT A MOVIE!");
+        submit.text("Edit Movie");
+    } else {
+        header.text("ADD A NEW");
+        submit.text("Add Movie");
+    }
+}
 
 export const DYLAN = (element) => {
     alert($(this));

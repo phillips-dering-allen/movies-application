@@ -124,6 +124,42 @@
       "rating": "1",
       "poster": "https://m.media-amazon.com/images/M/MV5BMzFkM2YwOTQtYzk2Mi00N2VlLWE3NTItN2YwNDg1YmY0ZDNmXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_SX300.jpg",
       "id": 18
+    },
+    {
+      "title": "Homeward Bound",
+      "director": "Richard Michaels",
+      "description": "A divorced man and his estranged, incurably ill teenage son get together for a final summer vacation and they end up at the divorce's estranged father's vineyard where they try to reconsile their differences.",
+      "rating": 5,
+      "poster": "https://m.media-amazon.com/images/M/MV5BYzk0ZTg4ZDUtZjE4MS00YzdkLTliMjMtOTk1YTNkNmU4M2IxXkEyXkFqcGdeQXVyMTk5MjAyMjM@._V1_SX300.jpg",
+      "genre": [
+        "war",
+        "science"
+      ],
+      "id": 19
+    },
+    {
+      "title": "Black Hawk Down",
+      "director": "Ridley Scott",
+      "description": "160 elite U.S. soldiers drop into Somalia to capture two top lieutenants of a renegade warlord and find themselves in a desperate battle with a large force of heavily-armed Somalis.",
+      "poster": "https://m.media-amazon.com/images/M/MV5BYWMwMzQxZjQtODM1YS00YmFiLTk1YjQtNzNiYWY1MDE4NTdiXkEyXkFqcGdeQXVyNDYyMDk5MTU@._V1_SX300.jpg",
+      "genre": [
+        "Drama",
+        "History",
+        "War"
+      ],
+      "id": 20
+    },
+    {
+      "title": "Dylan",
+      "director": "N/A",
+      "description": "Inspired by Tiziano Sclavi's Dylan Dog, Dylan Dawn is a \"Nightmare Investigator\" who lives together with his eccentric assistant Bang and solves cases dealing with the paranormal.",
+      "poster": "https://m.media-amazon.com/images/M/MV5BYjYxZWFlNzktY2I4Mi00Y2YzLTk1NGYtNjNlNzFlM2Q2YzllXkEyXkFqcGdeQXVyNjQzMzk5Mzg@._V1_SX300.jpg",
+      "genre": [
+        "action",
+        "war",
+        "western"
+      ],
+      "id": 21
     }
   ]
 }

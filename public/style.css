@@ -30,21 +30,36 @@ header {
     width: 50%;
 }
 
-.add-button, .search-icon {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
+/*.add-button {*/
+/*    opacity: 0.6;*/
+/*    cursor: pointer;*/
+/*    transition: 5s;*/
+/*    background: linear-gradient(45deg, #16BFFD, #CB3066);*/
+/*    -webkit-background-clip: text;*/
+/*    -webkit-text-fill-color: transparent;*/
+/*}*/
 
-#icon-add, #search-icon {
+/*.add-button, .search-icon {*/
+/*    display: flex;*/
+/*    align-items: center;*/
+/*    justify-content: center;*/
+/*}*/
+
+#icon-add {
     background: linear-gradient(45deg, #16BFFD, #CB3066);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    cursor: pointer;
 }
 
-.input-form {
-    display: flex;
-    align-items: center;
+/*#icon-add, #search-icon {*/
+/*    background: linear-gradient(45deg, #16BFFD, #CB3066);*/
+/*    -webkit-background-clip: text;*/
+/*    -webkit-text-fill-color: transparent;*/
+/*}*/
+
+#form-movie-image {
+    border: 1px solid lightgrey;
 }
 
 #icon-add {
@@ -65,12 +80,6 @@ header {
 #search-icon {
     font-size: 45px;
 }
-
-
-
-
-
-
 
 .movie-box {
     display: flex;
@@ -214,21 +223,31 @@ header {
 }
 
 /* STARS */
-.rating {
+#rating-wrapper {
+    padding: 6px;
+    border-color: #ced4da !important;
+    border-bottom-right-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+#form-rating {
     unicode-bidi: bidi-override;
     direction: rtl;
     text-align: center;
+    cursor: pointer;
 }
-.rating > label {
+#form-rating > label {
     display: inline-block;
     position: relative;
     width: 1.1em;
+    margin: 0;
 }
 
 
-.rating > label:hover ~ label i:before,
-.rating > label:hover {
+#form-rating > label:hover ~ label i:before,
+#form-rating > label:hover {
     color: gold;
+    cursor: pointer;
 }
 
 input[name='rating'] {

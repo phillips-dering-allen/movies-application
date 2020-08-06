@@ -2,86 +2,130 @@
 import * as key from './keys';
 import * as view from './views';
 
-const {getMovies, postMovie, getMovieInfo} = require('./api.js');
+const {getMovies, postMovie, getMovie} = require('./api.js');
 
 
 const state = {
-  flipped: false,
+    flipped: false,
 }
 
 // Adds new card to the screen without refreshing
 const update = (movie) => {
-  const newCard = view.renderMovie(movie);
-  $('#movie-box').append(newCard);
+    const newCard = view.renderMovie(movie);
+    $('#movie-box').append(newCard);
 }
 
 // Initial load
 const init = () => {
-  getMovies()
-      .then(movies => {
-        view.renderMovies(movies);
-      })
-      .catch(error => alert(error));
+    getMovies()
+        .then(movies => {
+            view.renderMovies(movies);
+        })
+        .catch(error => alert(error));
 };
 init();
 
 /* Event Listeners */
-$('#movie-box').on("click","#movie-submit",((e) => {
-  e.preventDefault();
-
-  const movie = {
-    title: $('#movie-title').val(),
-    description: $('#movie-description').val(),
-    rating: $('input[name="rating"]').val()
-  }
-
-  console.log(movie);
-
-  fetch(`http://www.omdbapi.com/?apikey=${key.openMovieDB}&t=${movie.title}`)
-      .then(result => result.json())
-      .then(data => {
-        console.log(data);
-        movie.poster = data.Poster
-        if(movie.description.length === 0)
-          movie.description = data.Plot;
-        postMovie(movie)
-            .then((response) => response.json())
-            .then((movie) => update(movie));
-      });
-}));
-
-// $('.add-button').on('click', '', (e) => {
-//
-// })
-
-$('#movie-box').on('click','.movie-card', (e) => {
-  if(!state.flipped) {
-    state.currentlyFlipped = e.currentTarget.children[0];
-    state.currentlyFlipped.classList.toggle('flip');
-    state.flipped = true;
-  } else {
-    if(e.target.classList.value.includes('top-left')) {
-      state.currentlyFlipped.classList.toggle('flip');
-      state.flipped = false;
+$('#movie-box').on('click', '.movie-card', (e) => {
+    if (!state.flipped) {
+        state.currentlyFlipped = e.currentTarget.children[0];
+        state.currentlyFlipped.classList.toggle('flip');
+        state.flipped = true;
     } else {
-      state.currentlyFlipped.classList.toggle('flip');
-      state.currentlyFlipped = e.currentTarget.children[0];
-      state.currentlyFlipped.classList.toggle('flip');
+        if (e.target.classList.value.includes('top-left')) {
+            state.currentlyFlipped.classList.toggle('flip');
+            state.flipped = false;
+        } else {
+            state.currentlyFlipped.classList.toggle('flip');
+            state.currentlyFlipped = e.currentTarget.children[0];
+            state.currentlyFlipped.classList.toggle('flip');
+        }
     }
-  }
 });
 
-$('#movie-box').on('click','.top-right', (e) => {
-  state.edit = true;
-  let dataID = e.currentTarget.parentNode.parentNode.parentNode.parentNode.getAttribute('data-id')
-  console.log(dataID);
-  console.log(e.currentTarget);
+$('#movie-box').on('click', '.top-right', (e) => {
+    state.edit = true;
+    let dataID = e.currentTarget.parentNode.parentNode.parentNode.parentNode.getAttribute('data-id')
+    console.log(dataID);
+    view.toggleInputForm(state.edit);
+    view.toggleImageHide();
+    view.renderLoader();
+    $('#modal-form').modal('show');
+    getMovie(dataID).then((movie) => {
+        $('.sk-cube-grid').remove();
+        view.toggleImageHide();
+        $('#form-movie-title').parent().next().val(movie.title);
+        $('#form-movie-director').parent().next().val(movie.director);
+        $('#form-movie-description').parent().next().val(movie.description);
+        // Rating
+        $('#form-movie-url').parent().next().val(movie.poster);
+        $('#form-movie-image').attr('src',`${movie.poster}`);
+
+        $('input[type="checkbox"]').each((i,e) => {
+            if(movie.genre.indexOf(e.value) !== -1)
+                $(e).prop("checked", true);
+        });
+    });
 
 });
 
-$('#movie-box').on('hover','#card-add', () => {
-  console.log("HOVER");
+$('#input-submit').click((e) => {
+    e.preventDefault();
+    // Variables
+    const movie = {
+        title: $('#form-movie-title').parent().next().val(),
+        director: $('#form-movie-director').parent().next().val(),
+        description: "",
+        rating: "",
+        poster: $('#form-movie-url').parent().next().val(),
+        genre: []
+    }
+
+    console.log(movie.title);
+
+    $('input[type="checkbox"]:checked').each((i, e) => {
+        movie.genre.push(e.value);
+    });
+
+    const rating = {
+        fake: [5, 4, 3, 2, 1],
+        real: [1, 2, 3, 4, 5]
+    }
+
+    movie.rating = parseFloat($('#form-rating input[type="radio"]:checked').val());
+    movie.rating = rating.real[rating.fake.indexOf(movie.rating)];
+    if (movie.title.length !== 0) {
+        if (state.edit) {
+            // Edit
+        } else {
+            fetch(`http://www.omdbapi.com/?apikey=${key.openMovieDB}&t=${movie.title}`)
+                .then(result => result.json())
+                .then(data => {
+                    console.log(data);
+                    movie.poster = data.Poster
+                    if (movie.description.length === 0)
+                        movie.description = data.Plot;
+                    if (movie.director.length === 0)
+                        movie.director = data.Director;
+                    if (movie.genre.length === 0)
+                        movie.genre = data.Genre.split(', ');
+                    postMovie(movie)
+                        .then((response) => response.json())
+                        .then((movie) => update(movie));
+                });
+        }
+
+        view.clearInput();
+        $('#modal-form').modal('hide');
+    } else {
+        alert("Please enter a title");
+    }
 });
+
+// $('#form-rating input[type="radio"]').click((e) => {
+//   e.target.classList.toggle('gold');
+//   console.log(e.target.);
+// });
 
 // Hover Effect
 
