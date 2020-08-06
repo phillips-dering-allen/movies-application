@@ -1,8 +1,10 @@
+// Colors for card back
 const getRandomColor = () => {
-    const colors = ['#8a0e40','#f0ad4e','#fccc3f','#029658','#5bc0de','#343464','#6454ac','#ec4c8c','#008080','#878787'];
+    const colors = ['#8a0e40', '#f0ad4e', '#fccc3f', '#029658', '#5bc0de', '#343464', '#6454ac', '#ec4c8c', '#008080', '#878787'];
     return colors[Math.floor(Math.random() * colors.length) + 1];
 };
 
+// Add button
 const renderAdd = () => {
     return `
         <div class="card" id="card-add">
@@ -49,9 +51,10 @@ const renderAdd = () => {
     `
 };
 
+// Adding a new movie card
 export const renderMovie = (movie) => {
     return `
-        <div class="card">
+    <div class="card" data-id="${movie.id}">
         <div class="card-inner">
             <div class="card-front" style="background-image: url(${movie.poster});"></div>
             <div class="card-back">
@@ -78,21 +81,24 @@ export const renderMovie = (movie) => {
     `;
 };
 
+// Entire movie array
 export const renderMovies = (movies) => {
     let html = "";
     movies.forEach(movie => {
         html += renderMovie(movie);
     });
-    $('#movie-box').html("").append(html).prepend(renderAdd());
+    $('#movie-box').html("").append(html);
 };
 
-export const drawCard = () => {
-    let html = `
-        <div class="card"></div>
-    `;
-    $('#movie-box').append(html);
-}
 
+// export const drawCard = () => {
+//     let html = `
+//         <div class="card"></div>
+//     `;
+//     $('#movie-box').append(html);
+// }
+
+// Loading animation
 export const renderLoader = () => {
     const html = `
         <div class="sk-cube-grid">
@@ -110,6 +116,7 @@ export const renderLoader = () => {
     $('#movie-box').html("").append(html);
 };
 
+// Clearing add movie card
 export const clearInput = () => {
     $('#movie-title').val("");
     $('#movie-rating').val(1);

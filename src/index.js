@@ -9,11 +9,13 @@ const state = {
   flipped: false,
 }
 
+// Adds new card to the screen without refreshing
 const update = (movie) => {
   const newCard = view.renderMovie(movie);
   $('#movie-box').append(newCard);
 }
 
+// Initial load
 const init = () => {
   getMovies()
       .then(movies => {
@@ -48,6 +50,10 @@ $('#movie-box').on("click","#movie-submit",((e) => {
       });
 }));
 
+// $('.add-button').on('click', '', (e) => {
+//
+// })
+
 $('#movie-box').on('click','.card', (e) => {
   if(!state.flipped) {
     state.currentlyFlipped = e.currentTarget.children[0];
@@ -67,7 +73,9 @@ $('#movie-box').on('click','.card', (e) => {
 
 $('#movie-box').on('click','.top-right', (e) => {
   state.edit = true;
-  console.log(e.currentTarget.parentNode.children);
+  let dataID = e.currentTarget.parentNode.parentNode.parentNode.parentNode.getAttribute('data-id')
+  console.log(dataID);
+  console.log(e.currentTarget);
 
 });
 

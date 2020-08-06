@@ -11,10 +11,22 @@
 <body>
 
 <!-- Main Container -->
+<div class="header-container">
+    <h1>Movie Application</h1>
+</div>
+
 <div id="container">
-    <form id="DYLAN">
-        DYLAN
-    </form>
+    <div class="search-header">
+        <div class="add-button">
+            <i id="icon-add" class="far fa-plus-square"></i>
+        </div>
+        <form class="search-bar">
+            <input type="text" id="search-bar" placeholder="Search for a movie" style="width: 210px; height: 40px">
+        </form>
+        <div class="search-icon">
+            <i id="search-icon" class="fas fa-search"></i>
+        </div>
+    </div>
 
     <div id="movie-box">
         <div class="sk-cube-grid">
@@ -32,7 +44,8 @@
 </div>
 
 <!-- Scripts -->
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
 <script src="main.js"></script>
 </body>
 </html>
