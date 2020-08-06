@@ -122,6 +122,7 @@ export const toggleImageHide = () => {
 
 // Clearing add movie movie-card
 export const clearInput = () => {
+    $('input[type="hidden"]').attr("data-id","");
     $('#form-movie-url').parent().next().val("");
     $('#form-movie-title').parent().next().val("");
     $('#form-movie-director').parent().next().val("");
@@ -140,9 +141,15 @@ export const toggleInputForm = (state) => {
     const submit = $('#input-submit');
 
     if(state) {
+        $('#modal-header').append(`
+            <button type="button" class="close" style="position: absolute; left: 1em;" data-dismiss="modal" aria-label="Close" id="trash">
+                <span aria-hidden="true" id="form-close"><i class='far fa-trash-alt' style="color: red"></i></span>
+            </button>
+        `);
         header.text("EDIT A MOVIE!");
         submit.text("Edit Movie");
     } else {
+        $('#trash').remove();
         header.text("ADD A NEW");
         submit.text("Add Movie");
     }

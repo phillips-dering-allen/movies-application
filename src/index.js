@@ -2,7 +2,7 @@
 import * as key from './keys';
 import * as view from './views';
 
-const {getMovies, postMovie, getMovie} = require('./api.js');
+const {getMovies, postMovie, getMovie, patchMovie, deleteMovie} = require('./api.js');
 
 
 const state = {
@@ -46,7 +46,6 @@ $('#movie-box').on('click', '.movie-card', (e) => {
 $('#movie-box').on('click', '.top-right', (e) => {
     state.edit = true;
     let dataID = e.currentTarget.parentNode.parentNode.parentNode.parentNode.getAttribute('data-id')
-    console.log(dataID);
     view.toggleInputForm(state.edit);
     view.toggleImageHide();
     view.renderLoader();
@@ -54,6 +53,7 @@ $('#movie-box').on('click', '.top-right', (e) => {
     getMovie(dataID).then((movie) => {
         $('.sk-cube-grid').remove();
         view.toggleImageHide();
+        $('input[type="hidden"]').attr("data-id",movie.id);
         $('#form-movie-title').parent().next().val(movie.title);
         $('#form-movie-director').parent().next().val(movie.director);
         $('#form-movie-description').parent().next().val(movie.description);
@@ -68,6 +68,23 @@ $('#movie-box').on('click', '.top-right', (e) => {
     });
 
 });
+
+$('#modal-form').on('click', '#trash', () => {
+    state.edit = false;
+    deleteMovie($('input[type="hidden"]').attr("data-id")).then();
+    view.toggleInputForm();
+    $('#form-movie-image').attr("src","https://m.media-amazon.com/images/M/MV5BMTkxNDc3OTcxMV5BMl5BanBnXkFtZTgwODk2NjAzOTE@._V1_SX300.jpg");
+    view.clearInput();
+    $('#modal-form').modal('hide');
+});
+
+$('#form-close').click(() => {
+    state.edit = false;
+    view.toggleInputForm();
+    $('#form-movie-image').attr("src","https://m.media-amazon.com/images/M/MV5BMTkxNDc3OTcxMV5BMl5BanBnXkFtZTgwODk2NjAzOTE@._V1_SX300.jpg");
+    view.clearInput();
+    $('#modal-form').modal('hide');
+})
 
 $('#input-submit').click((e) => {
     e.preventDefault();
@@ -96,7 +113,10 @@ $('#input-submit').click((e) => {
     movie.rating = rating.real[rating.fake.indexOf(movie.rating)];
     if (movie.title.length !== 0) {
         if (state.edit) {
-            // Edit
+            state.edit = false;
+            patchMovie(movie, $('input[type="hidden"]').attr("data-id")).then(result => result.json()).then(data => console.log(data));
+            view.toggleInputForm();
+            $('#form-movie-image').attr("src","https://m.media-amazon.com/images/M/MV5BMTkxNDc3OTcxMV5BMl5BanBnXkFtZTgwODk2NjAzOTE@._V1_SX300.jpg");
         } else {
             fetch(`http://www.omdbapi.com/?apikey=${key.openMovieDB}&t=${movie.title}`)
                 .then(result => result.json())

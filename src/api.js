@@ -18,5 +18,23 @@ module.exports = {
             },
             body: JSON.stringify(movie)
         }).then().catch(error => console.log(error));
+    },
+    patchMovie: (movie, id) => {
+        return fetch(`api/movies/${id}`, {
+            method: 'PUT',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(movie),
+        }).then().catch(error => console.log(error));
+    },
+    deleteMovie : (id) => {
+        return fetch(`api/movies/${id}`, {
+            method: 'DELETE',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+        }).then().catch(error => console.log(error));
     }
+
 }
