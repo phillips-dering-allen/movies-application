@@ -1,74 +1,30 @@
-// Colors for movie-card back
 const getRandomColor = () => {
     const colors = ['#8a0e40', '#f0ad4e', '#fccc3f', '#029658', '#5bc0de', '#343464', '#6454ac', '#ec4c8c', '#008080', '#878787'];
     return colors[Math.floor(Math.random() * colors.length)];
 };
 
-// Add button
-const renderAdd = () => {
-    return `
-        <div class="movie-card" id="card-add">
-            <div class="movie-card-inner">
-                <div class="movie-card-front">
-                    <i id="icon-add" class="far fa-plus-square"></i>
-                </div>
-                <div class="movie-card-back">
-                    <form style="height: 100%; Width: 100%">
-                        <div class="movie-card-header circle">
-                            <div>
-                                <input class="movie-input" type="text" id="movie-title" placeholder="Movie Title">
-                            </div>
-                        </div>
-        
-                        <div class="movie-card-body">
-                            <div>
-                                <textarea class="movie-description" id="movie-description" placeholder="Description"></textarea>
-                            </div>
-        
-                            <div class="rating">
-                                <input type="radio" id="star-1" name="rating" value="1">
-                                <label for="star-1"><i class="fas fa-star"></i></label>
-        
-                                <input type="radio" id="star-2" name="rating" value="2">
-                                <label for="star-2"><i class="fas fa-star"></i></label>
-        
-                                <input type="radio" id="star-3" name="rating" value="3">
-                                <label for="star-3"><i class="fas fa-star"></i></label>
-        
-                                <input type="radio" id="star-4" name="rating" value="4">
-                                <label for="star-4"><i class="fas fa-star"></i></label>
-        
-                                <input type="radio" id="star-5" name="rating" value="5">
-                                <label for="star-5"><i class="fas fa-star"></i></label>
-                            </div>
-        
-                            <button id="movie-submit">ADD MOVIE</button>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    `
-};
+const createStarTags = (currentRating, tag) => {
+    let rating = ``, tags = ``;
 
-export const removeMovie = (id) => {
-    $(`div[data-id="${id}"]`).remove();
+    if (currentRating) {
+        for (let i = 0; i < currentRating; i++) {
+            rating += `<i class="fas fa-star"></i>`
+        }
+    }
+
+    if (tag) {
+        for (let i = 0; i < 3; i++) {
+            if (tag[i]) {
+                tags += `<div class="tag mx-2 p-1 rounded" style="background-color: ${getRandomColor()}; border: 1px solid black">${tag[i]}</div>`
+            }
+        }
+    }
+
+    return {rating, tags}
 }
 
-// Adding a new movie movie-card
 export const renderMovie = (movie) => {
-    let html = ``, tag = ``;
-    if(movie.rating) {
-        for(let i=0; i<movie.rating; i++) {
-            html += `<i class="fas fa-star"></i>`
-        }
-    }
-    if(movie.genre && movie.genre.length <= 3) {
-        for(let i=0; i<movie.genre.length; i++) {
-            tag += `<div class="tag mx-2 p-1 rounded" style="background-color: ${getRandomColor()}; border: 1px solid black">${movie.genre[i]}</div>`
-        }
-    }
-    console.log(html);
+    const html = createStarTags(movie.rating, movie.genre);
     return `
     <div class="movie-card" data-id="${movie.id}">
         <div class="movie-card-inner">
@@ -84,10 +40,10 @@ export const renderMovie = (movie) => {
                 <div class="movie-card-body">
                     <p>${movie.description}</p>
                     <h4 class="movie-view-rating">
-                        ${html}
+                        ${html.rating}
                     </h4>
                     <div class="movie-tags d-flex flex-shrink-1 justify-content-center">
-                        ${tag}
+                        ${html.tags}
                     </div>
                 </div>
             </div>
@@ -96,7 +52,10 @@ export const renderMovie = (movie) => {
     `;
 };
 
-// Entire movie array
+export const removeMovie = (id) => {
+    $(`div[data-id="${id}"]`).remove();
+}
+
 export const renderMovies = (movies) => {
     let html = "";
     movies.forEach(movie => {
@@ -105,15 +64,42 @@ export const renderMovies = (movies) => {
     $('#movie-box').html("").append(html);
 };
 
+export const toggleImage = () => {
+    $('#form-movie-image').toggle();
+}
 
-// export const drawCard = () => {
-//     let html = `
-//         <div class="movie-card"></div>
-//     `;
-//     $('#movie-box').append(html);
-// }
+export const clearInput = (inputForm) => {
+    inputForm.id.attr("data-id", "");
+    inputForm.title.val("");
+    inputForm.director.val("");
+    inputForm.description.val("");
+    inputForm.url.val("");
 
-// Loading animation
+    $('input[type="checkbox"]:checked').each((i, e) => {
+        $(e).prop("checked", false);
+    });
+    $('#form-rating input[type="radio"]:checked').prop("checked", false);
+};
+
+export const toggleInputForm = (state) => {
+    const header = $('#form-title');
+    const submit = $('#input-submit');
+
+    if (state) {
+        $('#modal-header').append(`
+            <button type="button" class="close" style="position: absolute; left: 1em;" data-dismiss="modal" aria-label="Close" id="trash">
+                <span aria-hidden="true" id="form-close"><i class='far fa-trash-alt' style="color: red"></i></span>
+            </button>
+        `);
+        header.text("EDIT A MOVIE!");
+        submit.text("Edit Movie");
+    } else {
+        $('#trash').remove();
+        header.text("ADD A NEW");
+        submit.text("Add Movie");
+    }
+}
+
 export const renderLoader = () => {
     const html = `
         <div class="sk-cube-grid">
@@ -130,46 +116,3 @@ export const renderLoader = () => {
     `;
     $('#form-movie-container').append(html);
 };
-
-export const toggleImageHide = () => {
-    $('#form-movie-image').toggle();
-}
-
-// Clearing add movie movie-card
-export const clearInput = () => {
-    $('input[type="hidden"]').attr("data-id","");
-    $('#form-movie-url').parent().next().val("");
-    $('#form-movie-title').parent().next().val("");
-    $('#form-movie-director').parent().next().val("");
-    $('#form-movie-description').parent().next().val("");
-    // $("#form-").prop("checked", false);
-
-    $('input[type="checkbox"]:checked').each((i, e) => {
-        $(e).prop("checked", false);
-    });
-
-    $('#form-rating input[type="radio"]:checked').prop("checked", false);
-};
-
-export const toggleInputForm = (state) => {
-    const header = $('#form-title');
-    const submit = $('#input-submit');
-
-    if(state) {
-        $('#modal-header').append(`
-            <button type="button" class="close" style="position: absolute; left: 1em;" data-dismiss="modal" aria-label="Close" id="trash">
-                <span aria-hidden="true" id="form-close"><i class='far fa-trash-alt' style="color: red"></i></span>
-            </button>
-        `);
-        header.text("EDIT A MOVIE!");
-        submit.text("Edit Movie");
-    } else {
-        $('#trash').remove();
-        header.text("ADD A NEW");
-        submit.text("Add Movie");
-    }
-}
-
-export const DYLAN = (element) => {
-    alert($(this));
-}

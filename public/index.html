@@ -4,185 +4,36 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/all.min.css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+          integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./style.css">
-    <title>Movies Appliction</title>
+    <title>Document</title>
 </head>
 <body>
+<!-- Header -->
+<header><h1>Movie Application</h1></header>
 
-<!-- Main Container -->
-<header class="p-1"><h1>Movie Application</h1></header>
-
+<!-- Main Content -->
 <div class="container-fluid">
+    <!-- Search Bar -->
     <div class="container mt-4">
-        <div class="d-flex align-items-center justify-content-center">
+        <div class="d-flex justify-content-center align-items-center">
             <a data-toggle="modal" data-target="#modal-form"><i id="icon-add" class="far fa-plus-square"></i></a>
-            <form class="ml-2" id="search">
+            <form id="search-form" class="ml-2">
                 <div class="input-group">
-                    <input type="text" class="form-control input-form" placeholder="Search by movie, genre, author, rating" aria-label="Search by movie, genre, author, rating" aria-describedby="button-addon2" id="search-input">
-                    <button class="btn btn-outline-secondary" type="submit" id="search-submit"><i class="fas fa-search"></i></button>
+                    <input type="text" class="form-control input-form"
+                           placeholder="Search by movie, genre, author, rating"
+                           aria-label="Search by movie, genre, author, rating" aria-describedby="button-addon2"
+                           id="search-input">
+                    <button class="btn btn-outline-secondary" type="submit" id="search-submit"><i
+                            class="fas fa-search"></i></button>
                 </div>
             </form>
         </div>
     </div>
 
-    <!-- Modal -->
-    <div class="modal fade" id="modal-form" tabindex="1" aria-labelledby="formModalLabel" aria-hidden="true" data-backdrop="static">
-        <div class="modal-dialog modal-xl modal-dialog-centered">
-            <div class="modal-content">
-                <div class="modal-header position-relative" id="modal-header">
-                    <h5 class="modal-title flex-grow-1" id="form-title" style="text-align: center">ADD A NEW MOVIE!</h5>
-                    <button type="button" class="close" style="position: absolute; right: 1em;" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true" id="form-close">&times;</span>
-                    </button>
-                </div>
-                <form id="input-form">
-                    <input type="hidden" data-id="">
-                    <div class="modal-body">
-                        <div class="container-fluid">
-                            <div class="row">
-                                <div class="col-4 d-flex justify-content-center align-items-center" id="form-movie-container">
-                                    <img src="https://m.media-amazon.com/images/M/MV5BMTkxNDc3OTcxMV5BMl5BanBnXkFtZTgwODk2NjAzOTE@._V1_SX300.jpg" alt="" id="form-movie-image">
-                                </div>
-                                <div class="col-8">
-                                    <div class="input-group mb-3" style="width: 100%">
-                                        <div class="input-group-prepend">
-                                            <span class="input-group-text" id="form-movie-url">Image URL</span>
-                                        </div>
-                                        <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
-                                    </div>
-                                    <div class="input-group mb-3" style="width: 100%">
-                                        <div class="input-group-prepend">
-                                            <span class="input-group-text" id="form-movie-title">Title</span>
-                                        </div>
-                                        <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" required>
-                                    </div>
-                                    <div class="input-group mb-3" style="width: 100%">
-                                        <div class="input-group-prepend">
-                                            <span class="input-group-text" id="form-movie-director">Director</span>
-                                        </div>
-                                        <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
-                                    </div>
-                                    <div class="input-group mb-3">
-                                        <div class="input-group-prepend">
-                                            <span class="input-group-text" id="form-movie-description">Description</span>
-                                        </div>
-                                        <textarea class="form-control" aria-label="With textarea" style="resize: none"></textarea>
-                                    </div>
-                                    <div class="input-group d-flex align-items-center">
-                                        <div class="input-group-prepend">
-                                            <span class="input-group-text">Rating</span>
-                                        </div>
-                                        <div id="rating-wrapper" class="border">
-                                            <div id="form-rating" class="ml-2 mr-2">
-                                                <input type="radio" id="star-1" name="rating" value="1">
-                                                <label for="star-1"><i class="fas fa-star"></i></label>
-
-                                                <input type="radio" id="star-2" name="rating" value="2">
-                                                <label for="star-2"><i class="fas fa-star"></i></label>
-
-                                                <input type="radio" id="star-3" name="rating" value="3">
-                                                <label for="star-3"><i class="fas fa-star"></i></label>
-
-                                                <input type="radio" id="star-4" name="rating" value="4">
-                                                <label for="star-4"><i class="fas fa-star"></i></label>
-
-                                                <input type="radio" id="star-5" name="rating" value="5">
-                                                <label for="star-5"><i class="fas fa-star"></i></label>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- Checkboxes -->
-                                    <hr>
-                                    <div>
-                                        <div class="row">
-                                            <div class="col-4">
-                                                <div class="form-check">
-                                                    <input class="form-check-input" type="checkbox" value="action" id="genre-action">
-                                                    <label class="form-check-label" for="genre-action">
-                                                        Action
-                                                    </label>
-                                                </div>
-                                                <div class="form-check">
-                                                    <input class="form-check-input" type="checkbox" value="adventure" id="genre-adventure">
-                                                    <label class="form-check-label" for="genre-adventure">
-                                                        Adventure
-                                                    </label>
-                                                </div>
-                                                <div class="form-check">
-                                                    <input class="form-check-input" type="checkbox" value="comedy" id="genre-comedy">
-                                                    <label class="form-check-label" for="genre-comedy">
-                                                        Comedy
-                                                    </label>
-                                                </div>
-                                                <div class="form-check">
-                                                    <input class="form-check-input" type="checkbox" value="war" id="genre-war">
-                                                    <label class="form-check-label" for="genre-war">
-                                                        War
-                                                    </label>
-                                                </div>
-                                            </div>
-                                            <div class="col-4">
-                                                <div class="form-check">
-                                                    <input class="form-check-input" type="checkbox" value="crime" id="genre-crime">
-                                                    <label class="form-check-label" for="genre-crime">
-                                                        Crime
-                                                    </label>
-                                                </div>
-                                                <div class="form-check">
-                                                    <input class="form-check-input" type="checkbox" value="drama" id="genre-drama">
-                                                    <label class="form-check-label" for="genre-drama">
-                                                        drama
-                                                    </label>
-                                                </div>
-                                                <div class="form-check">
-                                                    <input class="form-check-input" type="checkbox" value="historical" id="genre-historical">
-                                                    <label class="form-check-label" for="genre-historical">
-                                                        Historical
-                                                    </label>
-                                                </div>
-                                                <div class="form-check">
-                                                    <input class="form-check-input" type="checkbox" value="western" id="genre-western">
-                                                    <label class="form-check-label" for="genre-western">
-                                                        Western
-                                                    </label>
-                                                </div>
-                                            </div>
-                                            <div class="col-4">
-                                                <div class="form-check">
-                                                    <input class="form-check-input" type="checkbox" value="horror" id="genre-horror">
-                                                    <label class="form-check-label" for="genre-horror">
-                                                        Horror
-                                                    </label>
-                                                </div>
-                                                <div class="form-check">
-                                                    <input class="form-check-input" type="checkbox" value="musical" id="genre-musical">
-                                                    <label class="form-check-label" for="genre-musical">
-                                                        Musicals
-                                                    </label>
-                                                </div>
-                                                <div class="form-check">
-                                                    <input class="form-check-input" type="checkbox" value="science" id="genre-science">
-                                                    <label class="form-check-label" for="genre-science">
-                                                        Science Fiction
-                                                    </label>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="modal-footer justify-content-center">
-                        <button type="submit" class="btn btn-primary" id="input-submit">Add Movie</button>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
-
+    <!-- Movie Box -->
     <div id="movie-box">
         <div class="sk-cube-grid">
             <div class="sk-cube sk-cube1"></div>
@@ -198,10 +49,206 @@
     </div>
 </div>
 
-<!-- Scripts -->
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+<!-- Modal -->
+<div class="modal fade" id="modal-form" tabindex="1" aria-labelledby="formModalLabel" aria-hidden="true"
+     data-backdrop="static">
+    <div class="modal-dialog modal-xl modal-dialog-centered">
+        <div class="modal-content">
+            <!-- Modal Header -->
+            <div class="modal-header position-relative" id="modal-header">
+                <h5 class="modal-title flex-grow-1" id="form-title" style="text-align: center">ADD A NEW MOVIE!</h5>
+                <button type="button" class="close" style="position: absolute; right: 1em;" data-dismiss="modal"
+                        aria-label="Close">
+                    <span aria-hidden="true" id="form-close">&times;</span>
+                </button>
+            </div>
+
+            <!-- Movie Input Form -->
+            <form id="input-form">
+                <input type="hidden" data-id="">
+                <div class="modal-body">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <!-- Movie Image -->
+                            <div class="col-4 d-flex justify-content-center align-items-center"
+                                 id="form-movie-container">
+                                <img src="https://m.media-amazon.com/images/M/MV5BMTkxNDc3OTcxMV5BMl5BanBnXkFtZTgwODk2NjAzOTE@._V1_SX300.jpg"
+                                     alt="" id="form-movie-image">
+                            </div>
+
+                            <!-- Movie Inputs -->
+                            <div class="col-8">
+                                <!-- Image URL -->
+                                <div class="input-group mb-3" style="width: 100%">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text" id="form-movie-url">Image URL</span>
+                                    </div>
+                                    <input type="text" class="form-control" aria-label="Sizing example input"
+                                           aria-describedby="inputGroup-sizing-default">
+                                </div>
+
+                                <!-- Movie Title -->
+                                <div class="input-group mb-3" style="width: 100%">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text" id="form-movie-title">Title</span>
+                                    </div>
+                                    <input type="text" class="form-control" aria-label="Sizing example input"
+                                           aria-describedby="inputGroup-sizing-default" required>
+                                </div>
+
+                                <!-- Movie Director -->
+                                <div class="input-group mb-3" style="width: 100%">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text" id="form-movie-director">Director</span>
+                                    </div>
+                                    <input type="text" class="form-control" aria-label="Sizing example input"
+                                           aria-describedby="inputGroup-sizing-default">
+                                </div>
+
+                                <!-- Movie Description -->
+                                <div class="input-group mb-3">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text" id="form-movie-description">Description</span>
+                                    </div>
+                                    <textarea class="form-control" aria-label="With textarea"
+                                              style="resize: none"></textarea>
+                                </div>
+
+                                <!-- Movie Rating -->
+                                <div class="input-group d-flex align-items-center">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text">Rating</span>
+                                    </div>
+                                    <div id="rating-wrapper" class="border">
+                                        <div id="form-rating" class="ml-2 mr-2">
+                                            <input type="radio" id="star-1" name="rating" value="1">
+                                            <label for="star-1"><i class="fas fa-star"></i></label>
+
+                                            <input type="radio" id="star-2" name="rating" value="2">
+                                            <label for="star-2"><i class="fas fa-star"></i></label>
+
+                                            <input type="radio" id="star-3" name="rating" value="3">
+                                            <label for="star-3"><i class="fas fa-star"></i></label>
+
+                                            <input type="radio" id="star-4" name="rating" value="4">
+                                            <label for="star-4"><i class="fas fa-star"></i></label>
+
+                                            <input type="radio" id="star-5" name="rating" value="5">
+                                            <label for="star-5"><i class="fas fa-star"></i></label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <hr>
+
+                                <!-- Checkboxes -->
+                                <div>
+                                    <div class="row">
+                                        <div class="col-4">
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" value="action"
+                                                       id="genre-action">
+                                                <label class="form-check-label" for="genre-action">
+                                                    Action
+                                                </label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" value="adventure"
+                                                       id="genre-adventure">
+                                                <label class="form-check-label" for="genre-adventure">
+                                                    Adventure
+                                                </label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" value="comedy"
+                                                       id="genre-comedy">
+                                                <label class="form-check-label" for="genre-comedy">
+                                                    Comedy
+                                                </label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" value="war"
+                                                       id="genre-war">
+                                                <label class="form-check-label" for="genre-war">
+                                                    War
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="col-4">
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" value="crime"
+                                                       id="genre-crime">
+                                                <label class="form-check-label" for="genre-crime">
+                                                    Crime
+                                                </label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" value="drama"
+                                                       id="genre-drama">
+                                                <label class="form-check-label" for="genre-drama">
+                                                    drama
+                                                </label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" value="historical"
+                                                       id="genre-historical">
+                                                <label class="form-check-label" for="genre-historical">
+                                                    Historical
+                                                </label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" value="western"
+                                                       id="genre-western">
+                                                <label class="form-check-label" for="genre-western">
+                                                    Western
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="col-4">
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" value="horror"
+                                                       id="genre-horror">
+                                                <label class="form-check-label" for="genre-horror">
+                                                    Horror
+                                                </label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" value="musical"
+                                                       id="genre-musical">
+                                                <label class="form-check-label" for="genre-musical">
+                                                    Musicals
+                                                </label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" value="science"
+                                                       id="genre-science">
+                                                <label class="form-check-label" for="genre-science">
+                                                    Science Fiction
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer justify-content-center">
+                    <button type="submit" class="btn btn-primary" id="input-submit">Add Movie</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+        crossorigin="anonymous"></script>
 <script src="main.js"></script>
 </body>
 </html>

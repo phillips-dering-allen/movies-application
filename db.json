@@ -2,33 +2,28 @@
   "movies": [
     {
       "title": "Casablanca",
+      "director": "",
       "description": "A cynical American expatriate struggles to decide whether or not he should help his former lover and her fugitive husband escape French Morocco.",
-      "rating": "4",
-      "id": 1,
-      "poster": "https://m.media-amazon.com/images/M/MV5BY2IzZGY2YmEtYzljNS00NTM5LTgwMzUtMzM1NjQ4NGI0OTk0XkEyXkFqcGdeQXVyNDYyMDk5MTU@._V1_SX300.jpg"
+      "rating": 2,
+      "poster": "https://m.media-amazon.com/images/M/MV5BY2IzZGY2YmEtYzljNS00NTM5LTgwMzUtMzM1NjQ4NGI0OTk0XkEyXkFqcGdeQXVyNDYyMDk5MTU@._V1_SX300.jpg",
+      "genre": [],
+      "id": 1
     },
     {
       "title": "Star Wars: A New Hope",
-      "director": "George Lucas",
-      "description": "STAR",
+      "director": "",
+      "description": "Luke Skywalker joins forces with a Jedi Knight, a cocky pilot, a Wookiee and two droids to save the galaxy from the Empire's world-destroying battle station, while also attempting to rescue Princess Leia from the mysterious Darth Vader.",
       "poster": "https://m.media-amazon.com/images/M/MV5BNzVlY2MwMjktM2E4OS00Y2Y3LWE3ZjctYzhkZGM3YzA1ZWM2XkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_SX300.jpg",
       "genre": [
-        "action",
-        "western"
+        "action"
       ],
       "id": 2
     },
     {
-      "name": "The Chronicles of Narnia",
-      "description": "LIONS",
-      "rating": "3",
-      "poster": "https://m.media-amazon.com/images/M/MV5BMTkxNDc3OTcxMV5BMl5BanBnXkFtZTgwODk2NjAzOTE@._V1_SX300.jpg",
-      "id": 3
-    },
-    {
       "title": "Yes",
       "director": "",
-      "description": "In this film, in self-imposed exile, working ...",
+      "description": "In this film, told almost entirely in iambic pentameter, She is a scientist in a loveless marriage to Anthony, a devious politician. He is a Lebanese doctor in self-imposed exile, working ...",
+      "rating": 3,
       "poster": "https://m.media-amazon.com/images/M/MV5BMTMxNzAyMTg4NV5BMl5BanBnXkFtZTcwNjUwMTkyMQ@@._V1_SX300.jpg",
       "genre": [],
       "id": 4
@@ -96,21 +91,20 @@
       "poster": "https://m.media-amazon.com/images/M/MV5BMTU2NjA1ODgzMF5BMl5BanBnXkFtZTgwMTM2MTI4MjE@._V1_SX300.jpg",
       "genre": [
         "action",
-        "crime"
+        "crime",
+        "western"
       ],
       "id": 13
     },
     {
-      "title": "John Wick 2",
-      "rating": "1",
-      "poster": "https://m.media-amazon.com/images/M/MV5BMTkxNDc3OTcxMV5BMl5BanBnXkFtZTgwODk2NjAzOTE@._V1_SX300.jpg",
-      "id": 14
-    },
-    {
       "title": "Matrix",
+      "director": "",
       "description": "Steven Matrix is one of the underworld's foremost hitmen until his luck runs out, and someone puts a contract out on him. Shot in the forehead by a .22 pistol, Matrix \"dies\" and finds ...",
-      "rating": "1",
       "poster": "https://m.media-amazon.com/images/M/MV5BYzUzOTA5ZTMtMTdlZS00MmQ5LWFmNjEtMjE5MTczN2RjNjE3XkEyXkFqcGdeQXVyNTc2ODIyMzY@._V1_SX300.jpg",
+      "genre": [
+        "action",
+        "historical"
+      ],
       "id": 15
     },
     {
@@ -122,59 +116,27 @@
     },
     {
       "title": "The Empire Strikes Back",
+      "director": "",
       "description": "After the Rebels are brutally overpowered by the Empire on the ice planet Hoth, Luke Skywalker begins Jedi training with Yoda, while his friends are pursued by Darth Vader and a bounty hunter named Boba Fett all over the galaxy.",
-      "rating": "1",
       "poster": "https://m.media-amazon.com/images/M/MV5BYmU1NDRjNDgtMzhiMi00NjZmLTg5NGItZDNiZjU5NTU4OTE0XkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_SX300.jpg",
+      "genre": [
+        "action",
+        "western",
+        "musical"
+      ],
       "id": 17
     },
     {
-      "title": "home alon",
-      "director": "",
-      "description": "",
-      "poster": "https://m.media-amazon.com/images/M/MV5BMzFkM2YwOTQtYzk2Mi00N2VlLWE3NTItN2YwNDg1YmY0ZDNmXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_SX300.jpg",
+      "title": "Yes",
+      "director": "Sally Potter",
+      "description": "In this film, told almost entirely in iambic pentameter, She is a scientist in a loveless marriage to Anthony, a devious politician. He is a Lebanese doctor in self-imposed exile, working ...",
+      "poster": "https://m.media-amazon.com/images/M/MV5BMTMxNzAyMTg4NV5BMl5BanBnXkFtZTcwNjUwMTkyMQ@@._V1_SX300.jpg",
       "genre": [
-        "action",
+        "crime",
         "drama",
-        "historical"
-      ],
-      "id": 18
-    },
-    {
-      "title": "Homeward Bound",
-      "director": "Richard Michaels",
-      "description": "A divorced man and his estranged, incurably ill teenage son get together for a final summer vacation and they end up at the divorce's estranged father's vineyard where they try to reconsile their differences.",
-      "rating": 5,
-      "poster": "https://m.media-amazon.com/images/M/MV5BYzk0ZTg4ZDUtZjE4MS00YzdkLTliMjMtOTk1YTNkNmU4M2IxXkEyXkFqcGdeQXVyMTk5MjAyMjM@._V1_SX300.jpg",
-      "genre": [
-        "war",
-        "science"
-      ],
-      "id": 19
-    },
-    {
-      "title": "Black Hawk Down",
-      "director": "Ridley Scott",
-      "description": "160 elite U.S. soldiers drop into Somalia to capture two top lieutenants of a renegade warlord and find themselves in a desperate battle with a large force of heavily-armed Somalis.",
-      "rating": 5,
-      "poster": "https://m.media-amazon.com/images/M/MV5BYWMwMzQxZjQtODM1YS00YmFiLTk1YjQtNzNiYWY1MDE4NTdiXkEyXkFqcGdeQXVyNDYyMDk5MTU@._V1_SX300.jpg",
-      "genre": [
-        "war",
-        "drama",
-        "historical"
-      ],
-      "id": 20
-    },
-    {
-      "title": "Dylan",
-      "director": "N/A",
-      "description": "Inspired by Tiziano Sclavi's Dylan Dog, Dylan Dawn is a \"Nightmare Investigator\" who lives together with his eccentric assistant Bang and solves cases dealing with the paranormal.",
-      "poster": "https://m.media-amazon.com/images/M/MV5BYjYxZWFlNzktY2I4Mi00Y2YzLTk1NGYtNjNlNzFlM2Q2YzllXkEyXkFqcGdeQXVyNjQzMzk5Mzg@._V1_SX300.jpg",
-      "genre": [
-        "action",
-        "war",
         "western"
       ],
-      "id": 21
+      "id": 18
     }
   ]
 }
