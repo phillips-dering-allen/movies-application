@@ -3,7 +3,7 @@ const getRandomColor = () => {
     return colors[Math.floor(Math.random() * colors.length)];
 };
 
-// Creates the starts for each movie and the tags
+// Creates the stars for each movie and the tags
 const createStarTags = (currentRating, tag) => {
     let rating = ``, tags = ``;
 
@@ -101,7 +101,7 @@ export const toggleInputForm = (state) => {
         submit.text("Edit Movie");
     } else {
         $('#trash').remove();
-        header.text("ADD A NEW");
+        header.text("ADD A NEW MOVIE!");
         submit.text("Add Movie");
     }
 }

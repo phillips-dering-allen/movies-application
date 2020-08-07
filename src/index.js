@@ -34,7 +34,6 @@ const updateCards = (movie) => {
     if (exists) {
         const movieCard = view.renderMovie(movie);
         $(`div[data-id="${movie.id}"]`).replaceWith(movieCard);
-        // $(`div[data-id="${movie.id}"]`).children('div.movie-card-inner').addClass('flip');
     } else {
         state.movies.push(movie);
         const movieCard = view.renderMovie(movie);
@@ -61,7 +60,7 @@ elements.movieBox.on('click', '.movie-card', (e) => {
     }
 });
 
-// Toggles edit, flips the card
+// Toggles edit, shows Modal and populates modal data
 elements.movieBox.on('click', '.top-right', (e) => {
     state.edit = true;
     const id = e.currentTarget.parentNode.parentNode.parentNode.parentNode.getAttribute('data-id');
