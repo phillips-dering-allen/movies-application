@@ -127,14 +127,14 @@
       "id": 17
     },
     {
-      "title": "Yes",
-      "director": "Sally Potter",
-      "description": "In this film, told almost entirely in iambic pentameter, She is a scientist in a loveless marriage to Anthony, a devious politician. He is a Lebanese doctor in self-imposed exile, working ...",
-      "poster": "https://m.media-amazon.com/images/M/MV5BMTMxNzAyMTg4NV5BMl5BanBnXkFtZTcwNjUwMTkyMQ@@._V1_SX300.jpg",
+      "title": "Undefined",
+      "director": "Bryant Dameron, Jacob Dodd",
+      "description": "An unfortunate accident sets in motion a path of change for Nathanial Cane as he attempts to recover from substance abuse. A mentally unstable psychiatrist, DR. Henry Calhoon is tipping ...",
+      "rating": 5,
+      "poster": "https://m.media-amazon.com/images/M/MV5BMTgzNzkxMzk5Nl5BMl5BanBnXkFtZTgwMTQ2MzA2MDE@._V1_SX300.jpg",
       "genre": [
-        "crime",
         "drama",
-        "western"
+        "horror"
       ],
       "id": 18
     }

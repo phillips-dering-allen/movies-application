@@ -6,10 +6,12 @@ import * as helper from './helpers';
 
 const {getMovies, getMovie, postMovie, patchMovie, deleteMovie} = require('./api.js');
 
+// A state object to keep from of some variables
 const state = {
     currentlyFlipped: false,
 }
 
+// The initialize function that runs on start up
 const init = () => {
     getMovies()
         .then(movies => {
@@ -20,6 +22,7 @@ const init = () => {
 }
 init();
 
+// An update function that will re render an updated card or draw a new card
 const updateCards = (movie) => {
     let currentID = movie.id, exists = false;
     for(let i=0; i<state.movies.length; i++) {
@@ -40,6 +43,7 @@ const updateCards = (movie) => {
 }
 
 /* Event Listeners */
+// Flip Toggler
 elements.movieBox.on('click', '.movie-card', (e) => {
     if (!state.currentlyFlipped) {
         state.activeCard = e.currentTarget.children[0];
@@ -57,6 +61,7 @@ elements.movieBox.on('click', '.movie-card', (e) => {
     }
 });
 
+// Toggles edit, flips the card
 elements.movieBox.on('click', '.top-right', (e) => {
     state.edit = true;
     const id = e.currentTarget.parentNode.parentNode.parentNode.parentNode.getAttribute('data-id');
@@ -73,6 +78,7 @@ elements.movieBox.on('click', '.top-right', (e) => {
     });
 });
 
+// The event handler that'll handle whether the delete button is clicked
 elements.modal.on('click', '#trash', () => {
     const id = elements.inputForm.id.attr("data-id");
     state.edit = false;
@@ -91,15 +97,16 @@ elements.modal.on('click', '#trash', () => {
     elements.inputForm.image.attr("src", "https://m.media-amazon.com/images/M/MV5BMTkxNDc3OTcxMV5BMl5BanBnXkFtZTgwODk2NjAzOTE@._V1_SX300.jpg");
 });
 
+// The X button on the form
 elements.inputForm.exit.click(() => {
     state.edit = false;
     elements.modal.modal('hide');
-    // Time out?
     view.toggleInputForm();
     view.clearInput(elements.inputForm);
     elements.inputForm.image.attr("src", "https://m.media-amazon.com/images/M/MV5BMTkxNDc3OTcxMV5BMl5BanBnXkFtZTgwODk2NjAzOTE@._V1_SX300.jpg");
 });
 
+// handles the submitting of the form
 elements.inputForm.submit.click((e) => {
     e.preventDefault();
     const rating = {
@@ -157,6 +164,7 @@ elements.inputForm.submit.click((e) => {
     }
 });
 
+// Search Input
 elements.searchInput.keyup((e) => {
     e.preventDefault();
     const search = elements.searchInput.val().toLowerCase();

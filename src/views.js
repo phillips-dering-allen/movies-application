@@ -3,6 +3,7 @@ const getRandomColor = () => {
     return colors[Math.floor(Math.random() * colors.length)];
 };
 
+// Creates the starts for each movie and the tags
 const createStarTags = (currentRating, tag) => {
     let rating = ``, tags = ``;
 
@@ -23,6 +24,7 @@ const createStarTags = (currentRating, tag) => {
     return {rating, tags}
 }
 
+// Renders a single movie
 export const renderMovie = (movie) => {
     const html = createStarTags(movie.rating, movie.genre);
     return `
@@ -52,10 +54,12 @@ export const renderMovie = (movie) => {
     `;
 };
 
+// removes a deleted movie from the page
 export const removeMovie = (id) => {
     $(`div[data-id="${id}"]`).remove();
 }
 
+// Renders multiple movies to the page
 export const renderMovies = (movies) => {
     let html = "";
     movies.forEach(movie => {
@@ -68,6 +72,7 @@ export const toggleImage = () => {
     $('#form-movie-image').toggle();
 }
 
+// Clears the form input
 export const clearInput = (inputForm) => {
     inputForm.id.attr("data-id", "");
     inputForm.title.val("");
@@ -81,6 +86,7 @@ export const clearInput = (inputForm) => {
     $('#form-rating input[type="radio"]:checked').prop("checked", false);
 };
 
+// Toggles the form between add and edit.
 export const toggleInputForm = (state) => {
     const header = $('#form-title');
     const submit = $('#input-submit');
@@ -100,6 +106,7 @@ export const toggleInputForm = (state) => {
     }
 }
 
+// The function that draws the loader to the input when waiting for the movie.
 export const renderLoader = () => {
     const html = `
         <div class="sk-cube-grid">
