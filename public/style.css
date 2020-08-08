@@ -36,9 +36,12 @@ header {
 
 /* Movie Box */
 #movie-box {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+
+    /*display: flex;*/
+    /*flex-direction: row;*/
+    /*flex-wrap: wrap;*/
 }
 
 /* Cards */

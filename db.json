@@ -11,80 +11,15 @@
     },
     {
       "title": "Star Wars: A New Hope",
-      "director": "",
+      "director": "George Lucas",
       "description": "Luke Skywalker joins forces with a Jedi Knight, a cocky pilot, a Wookiee and two droids to save the galaxy from the Empire's world-destroying battle station, while also attempting to rescue Princess Leia from the mysterious Darth Vader.",
-      "rating": 5,
       "poster": "https://m.media-amazon.com/images/M/MV5BNzVlY2MwMjktM2E4OS00Y2Y3LWE3ZjctYzhkZGM3YzA1ZWM2XkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_SX300.jpg",
       "genre": [
         "action",
-        "western"
+        "crime",
+        "historical"
       ],
       "id": 2
-    },
-    {
-      "title": "Yes",
-      "director": "",
-      "description": "In this film, told almost entirely in iambic pentameter, She is a scientist in a loveless marriage to Anthony, a devious politician. He is a Lebanese doctor in self-imposed exile, working ...",
-      "rating": 3,
-      "poster": "https://m.media-amazon.com/images/M/MV5BMTMxNzAyMTg4NV5BMl5BanBnXkFtZTcwNjUwMTkyMQ@@._V1_SX300.jpg",
-      "genre": [],
-      "id": 4
-    },
-    {
-      "title": "The Lion King",
-      "description": "Lion prince Simba and his father are targeted by his bitter uncle, who wants to ascend the throne himself.",
-      "rating": "1",
-      "id": 5,
-      "poster": "https://m.media-amazon.com/images/M/MV5BYTYxNGMyZTYtMjE3MS00MzNjLWFjNmYtMDk3N2FmM2JiM2M1XkEyXkFqcGdeQXVyNjY5NDU4NzI@._V1_SX300.jpg"
-    },
-    {
-      "title": "Batman",
-      "description": "The Dark Knight of Gotham City begins his war on crime with his first major enemy being Jack Napier, a criminal who becomes the clownishly homicidal Joker.",
-      "rating": "1",
-      "id": 6,
-      "poster": "https://m.media-amazon.com/images/M/MV5BMTYwNjAyODIyMF5BMl5BanBnXkFtZTYwNDMwMDk2._V1_SX300.jpg"
-    },
-    {
-      "title": "Toy Story",
-      "description": "A cowboy doll is profoundly threatened and jealous when a new spaceman figure supplants him as top toy in a boy's room.",
-      "rating": "1",
-      "poster": "https://m.media-amazon.com/images/M/MV5BMDU2ZWJlMjktMTRhMy00ZTA5LWEzNDgtYmNmZTEwZTViZWJkXkEyXkFqcGdeQXVyNDQ2OTk4MzI@._V1_SX300.jpg",
-      "id": 7
-    },
-    {
-      "title": "Toy Story 2",
-      "description": "When Woody is stolen by a toy collector, Buzz and his friends set out on a rescue mission to save Woody before he becomes a museum toy property with his roundup gang Jessie, Prospector, and Bullseye.",
-      "rating": "1",
-      "poster": "https://m.media-amazon.com/images/M/MV5BMWM5ZDcxMTYtNTEyNS00MDRkLWI3YTItNThmMGExMWY4NDIwXkEyXkFqcGdeQXVyNjUwNzk3NDc@._V1_SX300.jpg",
-      "id": 8
-    },
-    {
-      "title": "Toy Story 3",
-      "description": "The toys are mistakenly delivered to a day-care center instead of the attic right before Andy leaves for college, and it's up to Woody to convince the other toys that they weren't abandoned and to return home.",
-      "rating": "1",
-      "poster": "https://m.media-amazon.com/images/M/MV5BMTgxOTY4Mjc0MF5BMl5BanBnXkFtZTcwNTA4MDQyMw@@._V1_SX300.jpg",
-      "id": 9
-    },
-    {
-      "title": "Toy Story 4",
-      "description": "When a new toy called \"Forky\" joins Woody and the gang, a road trip alongside old and new friends reveals how big the world can be for a toy.",
-      "rating": "1",
-      "poster": "https://m.media-amazon.com/images/M/MV5BMTYzMDM4NzkxOV5BMl5BanBnXkFtZTgwNzM1Mzg2NzM@._V1_SX300.jpg",
-      "id": 10
-    },
-    {
-      "title": "Monsters Inc",
-      "description": "In order to power the city, monsters have to scare children so that they scream. However, the children are toxic to the monsters, and after a child gets through, 2 monsters realize things may not be what they think.",
-      "rating": "1",
-      "poster": "https://m.media-amazon.com/images/M/MV5BMTY1NTI0ODUyOF5BMl5BanBnXkFtZTgwNTEyNjQ0MDE@._V1_SX300.jpg",
-      "id": 11
-    },
-    {
-      "title": "Looper",
-      "description": "In 2074, when the mob wants to get rid of someone, the target is sent into the past, where a hired gun awaits - someone like Joe - who one day learns the mob wants to 'close the loop' by sending back Joe's future self for assassination.",
-      "rating": "1",
-      "poster": "https://m.media-amazon.com/images/M/MV5BMTg5NTA3NTg4NF5BMl5BanBnXkFtZTcwNTA0NDYzOA@@._V1_SX300.jpg",
-      "id": 12
     },
     {
       "title": "John Wick",
@@ -118,7 +53,7 @@
     },
     {
       "title": "The Empire Strikes Back",
-      "director": "",
+      "director": "George Lucas",
       "description": "After the Rebels are brutally overpowered by the Empire on the ice planet Hoth, Luke Skywalker begins Jedi training with Yoda, while his friends are pursued by Darth Vader and a bounty hunter named Boba Fett all over the galaxy.",
       "poster": "https://m.media-amazon.com/images/M/MV5BYmU1NDRjNDgtMzhiMi00NjZmLTg5NGItZDNiZjU5NTU4OTE0XkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_SX300.jpg",
       "genre": [
@@ -139,6 +74,18 @@
         "horror"
       ],
       "id": 18
+    },
+    {
+      "title": "The Lion King",
+      "director": "Roger Allers, Rob Minkoff",
+      "description": "Lion prince Simba and his father are targeted by his bitter uncle, who wants to ascend the throne himself.",
+      "rating": 5,
+      "poster": "https://m.media-amazon.com/images/M/MV5BYTYxNGMyZTYtMjE3MS00MzNjLWFjNmYtMDk3N2FmM2JiM2M1XkEyXkFqcGdeQXVyNjY5NDU4NzI@._V1_SX300.jpg",
+      "genre": [
+        "action",
+        "drama"
+      ],
+      "id": 19
     }
   ]
 }
