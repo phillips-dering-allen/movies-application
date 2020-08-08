@@ -105,6 +105,18 @@ elements.inputForm.exit.click(() => {
     elements.inputForm.image.attr("src", "https://m.media-amazon.com/images/M/MV5BMTkxNDc3OTcxMV5BMl5BanBnXkFtZTgwODk2NjAzOTE@._V1_SX300.jpg");
 });
 
+elements.inputForm.stars.click((e) => {
+    $('#form-rating input').each((i,e) => {
+        $(e).next().children().removeClass("movie-view-rating");
+    });
+    const current = $(e.currentTarget).parent().attr("for").split("star-");
+    const fake = parseInt(current[1]);
+
+    for(let i=6; i>fake; i--) {
+        $(`#star-${i-1}`).next().children().addClass("movie-view-rating");
+    }
+})
+
 // handles the submitting of the form
 elements.inputForm.submit.click((e) => {
     e.preventDefault();
@@ -125,7 +137,22 @@ elements.inputForm.submit.click((e) => {
     if (movie.title.length !== 0) {
         if (state.edit) {
             state.edit = false;
-            patchMovie(movie, elements.inputForm.id.attr("data-id"))
+            const id = elements.inputForm.id.attr("data-id");
+
+            $(`div[data-id=${id}]`).html(`
+                <div class="sk-cube-grid" style="position: relative; top: 20%; transform: translate(-50%)">
+                    <div class="sk-cube sk-cube1"></div>
+                    <div class="sk-cube sk-cube2"></div>
+                    <div class="sk-cube sk-cube3"></div>
+                    <div class="sk-cube sk-cube4"></div>
+                    <div class="sk-cube sk-cube5"></div>
+                    <div class="sk-cube sk-cube6"></div>
+                    <div class="sk-cube sk-cube7"></div>
+                    <div class="sk-cube sk-cube8"></div>
+                    <div class="sk-cube sk-cube9"></div>
+                </div>
+            `);
+            patchMovie(movie, id)
                 .then(result => result.json())
                 .then(movie => updateCards(movie));
             view.toggleInputForm(state.edit);

@@ -28,24 +28,26 @@ const createStarTags = (currentRating, tag) => {
 export const renderMovie = (movie) => {
     const html = createStarTags(movie.rating, movie.genre);
     return `
-    <div class="movie-card" data-id="${movie.id}">
-        <div class="movie-card-inner">
-            <div class="movie-card-front" style="background-image: url(${movie.poster});"></div>
-            <div class="movie-card-back">
-                <div class="movie-card-header circle" style="background-color: ${getRandomColor()}">
-                    <div class="header-title mt-2">
-                        <h3 class="movie-title">${movie.title}</h3>
+    <div class="d-flex justify-content-center align-items-center">
+        <div class="movie-card" data-id="${movie.id}">
+            <div class="movie-card-inner">
+                <div class="movie-card-front" style="background-image: url(${movie.poster});"></div>
+                <div class="movie-card-back">
+                    <div class="movie-card-header circle" style="background-color: ${getRandomColor()}">
+                        <div class="header-title mt-2">
+                            <h3 class="movie-title">${movie.title}</h3>
+                        </div>
+                        <i class="fas fa-times top-left"></i>
+                        <i class="fas fa-edit top-right"></i>
                     </div>
-                    <i class="fas fa-times top-left"></i>
-                    <i class="fas fa-edit top-right"></i>
-                </div>
-                <div class="movie-card-body">
-                    <p>${movie.description}</p>
-                    <h4 class="movie-view-rating">
-                        ${html.rating}
-                    </h4>
-                    <div class="movie-tags d-flex flex-shrink-1 justify-content-center">
-                        ${html.tags}
+                    <div class="movie-card-body">
+                        <p>${movie.description}</p>
+                        <h4 class="movie-view-rating">
+                            ${html.rating}
+                        </h4>
+                        <div class="movie-tags d-flex flex-shrink-1 justify-content-center">
+                            ${html.tags}
+                        </div>
                     </div>
                 </div>
             </div>
@@ -82,6 +84,10 @@ export const clearInput = (inputForm) => {
 
     $('input[type="checkbox"]:checked').each((i, e) => {
         $(e).prop("checked", false);
+    });
+
+    $('#form-rating input').each((i,e) => {
+        $(e).next().children().removeClass("movie-view-rating");
     });
     $('#form-rating input[type="radio"]:checked').prop("checked", false);
 };

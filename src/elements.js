@@ -11,6 +11,7 @@ export const elements = {
         image: $('#form-movie-image'),
         exit: $('#form-close'),
         submit: $('#input-submit'),
+        stars: $('.fa-star'),
     },
     searchInput: $("#search-input"),
     searchSubmit: $("#search-submit")
